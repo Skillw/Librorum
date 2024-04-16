@@ -1,22 +1,39 @@
 import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import type { Theme as ThemeConfig } from 'vitepress'
-import { 
-  NolebaseEnhancedReadabilitiesMenu, 
+
+// Nolebase EnhancedReadabilities
+import {
+  InjectionKey as NolebaseEnhancedReadabilitiesInjectionKey,
+  Options as NolebaseEnhancedReadabilitiesOptions,
+  NolebaseEnhancedReadabilitiesMenu,
   NolebaseEnhancedReadabilitiesScreenMenu,
-  Options,
-  InjectionKey
-} from '@nolebase/vitepress-plugin-enhanced-readabilities'
+} from '@nolebase/vitepress-plugin-enhanced-readabilities/dist/client'
+import '@nolebase/vitepress-plugin-enhanced-readabilities/dist/client/style.css'
+
+// Nolebase InlineLinkPreview
 import { 
   NolebaseInlineLinkPreviewPlugin, 
-} from '@nolebase/vitepress-plugin-inline-link-preview'
+} from '@nolebase/vitepress-plugin-inline-link-preview/dist/client'
+import '@nolebase/vitepress-plugin-inline-link-preview/dist/client/style.css'
+
+// Nolebase HighlightTargetedHeading
+import {
+  NolebaseHighlightTargetedHeading,
+} from '@nolebase/vitepress-plugin-highlight-targeted-heading/dist/client'
+
+import '@nolebase/vitepress-plugin-highlight-targeted-heading/dist/client/style.css'
+
+// Nolebase GitChangelog
+import {
+  NolebaseGitChangelogPlugin
+} from '@nolebase/vitepress-plugin-git-changelog/dist/client'
+
+import '@nolebase/vitepress-plugin-git-changelog/client/styles.css'
+
+// Giscus Talk
 import { useData, useRoute } from 'vitepress';
 import { toRefs } from "vue";
-import '@nolebase/vitepress-plugin-inline-link-preview/dist/style.css'
-
-// import './styles/vars.css'
-// import './styles/main.css'
-import '@nolebase/vitepress-plugin-enhanced-readabilities/dist/style.css'
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 
 export const Theme: ThemeConfig = {
@@ -26,15 +43,19 @@ export const Theme: ThemeConfig = {
       // 为较宽的屏幕的导航栏添加阅读增强菜单
       'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu), 
       // 为较窄的屏幕（通常是小于 iPad Mini）添加阅读增强菜单
-      'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu), 
+      'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
+      'layout-top': () => [
+        h(NolebaseHighlightTargetedHeading),
+      ],
     })
   },
   enhanceApp({app}) {
-    app.provide(InjectionKey, {
+    app.provide(NolebaseEnhancedReadabilitiesInjectionKey, {
       spotlight:{
         defaultToggle: true
       }
-    } as Options)
+    } as NolebaseEnhancedReadabilitiesOptions)
+    app.use(NolebaseGitChangelogPlugin)
     app.use(NolebaseInlineLinkPreviewPlugin) 
   },
   // setup(){

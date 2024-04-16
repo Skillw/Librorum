@@ -1,10 +1,9 @@
 import { defineConfig } from "vitepress";
-import { generateSidebar } from 'vitepress-sidebar';
 
-import { ElementTransform } from '@nolebase/markdown-it-element-transform'
+import { InlineLinkPreviewElementTransform } from '@nolebase/vitepress-plugin-inline-link-preview/dist/markdown-it'
 
-import { cwd } from 'process';
 import { BiDirectionalLinks, } from '@nolebase/markdown-it-bi-directional-links'
+import { cwd } from 'process';
 
 
 // https://vitepress.dev/reference/site-config
@@ -21,7 +20,8 @@ export default defineConfig({
     ssr: { 
       noExternal: [ 
         // 如果还有别的依赖需要添加的话，并排填写和配置到这里即可
-        '@nolebase/vitepress-plugin-enhanced-readabilities', 
+        '@nolebase/vitepress-plugin-enhanced-readabilities',
+        '@nolebase/vitepress-plugin-highlight-targeted-heading',
       ], 
     }, 
   }, 
@@ -29,31 +29,9 @@ export default defineConfig({
 
   markdown:{
     config: (md) => {
-      md.use(ElementTransform, (() => { 
-        let transformNextLinkCloseToken = false 
-    
-        return { 
-          transform(token) { 
-            switch (token.type) { 
-              case 'link_open': 
-                if (token.attrGet('class') !== 'header-anchor') { 
-                  token.tag = 'VPNolebaseInlineLinkPreview' 
-                  transformNextLinkCloseToken = true 
-                } 
-                break 
-              case 'link_close': 
-                if (transformNextLinkCloseToken) { 
-                  token.tag = 'VPNolebaseInlineLinkPreview' 
-                  transformNextLinkCloseToken = false 
-                } 
-    
-                break 
-            } 
-          }, 
-        } 
-      })());
+      md.use(InlineLinkPreviewElementTransform);
       md.use(BiDirectionalLinks({ 
-        dir: cwd(), // 注意这行不要漏掉了哦
+        dir: cwd(),
       })) 
     }
   },
@@ -71,13 +49,7 @@ export default defineConfig({
           { text: "朋友们", link: "/zh-CN/friends" },
         ],
 
-        sidebar: generateSidebar({
-          documentRootPath: 'docs',
-          scanStartPath: '/zh-CN/blog',
-          resolvePath: '/zh-CN/blog/',
-          useTitleFromFileHeading: true,
-          sortMenusByFrontmatterDate: true
-        }),
+        sidebar: {},
         search: {
           provider: "local",
           options: {

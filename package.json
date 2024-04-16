@@ -5,10 +5,11 @@
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "@nolebase/markdown-it-bi-directional-links": "^1.28.0",
-    "@nolebase/markdown-it-element-transform": "^1.28.0",
-    "@nolebase/vitepress-plugin-enhanced-readabilities": "^1.28.0",
-    "@nolebase/vitepress-plugin-inline-link-preview": "^1.28.0",
+    "@nolebase/markdown-it-bi-directional-links": "^2.0.0-rc4",
+    "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.0.0-rc4",
+    "@nolebase/vitepress-plugin-git-changelog": "^2.0.0-rc4",
+    "@nolebase/vitepress-plugin-highlight-targeted-heading": "^2.0.0-rc4",
+    "@nolebase/vitepress-plugin-inline-link-preview": "^2.0.0-rc4",
     "@types/node": "^20.12.7"
   },
   "dependencies": {
