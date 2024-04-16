@@ -1,6 +1,6 @@
 import { defineConfig } from "vitepress";
 
-import { InlineLinkPreviewElementTransform } from '@nolebase/vitepress-plugin-inline-link-preview/dist/markdown-it'
+import { InlineLinkPreviewElementTransform } from '@nolebase/vitepress-plugin-inline-link-preview/markdown-it'
 
 import { BiDirectionalLinks, } from '@nolebase/markdown-it-bi-directional-links'
 import { cwd } from 'process';

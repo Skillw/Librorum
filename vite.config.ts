@@ -3,7 +3,8 @@ import { defineConfig } from 'vite'
 import {
     GitChangelog,
     GitChangelogMarkdownSection,
-} from '@nolebase/vitepress-plugin-git-changelog/dist/vite'
+// @ts-ignore
+} from '@nolebase/vitepress-plugin-git-changelog/vite'
 
 export default defineConfig(() => {
     return {

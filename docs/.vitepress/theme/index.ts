@@ -8,28 +8,28 @@ import {
   Options as NolebaseEnhancedReadabilitiesOptions,
   NolebaseEnhancedReadabilitiesMenu,
   NolebaseEnhancedReadabilitiesScreenMenu,
-} from '@nolebase/vitepress-plugin-enhanced-readabilities/dist/client'
-import '@nolebase/vitepress-plugin-enhanced-readabilities/dist/client/style.css'
+} from "@nolebase/vitepress-plugin-enhanced-readabilities/client"
+import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
 
 // Nolebase InlineLinkPreview
 import { 
   NolebaseInlineLinkPreviewPlugin, 
-} from '@nolebase/vitepress-plugin-inline-link-preview/dist/client'
-import '@nolebase/vitepress-plugin-inline-link-preview/dist/client/style.css'
+} from '@nolebase/vitepress-plugin-inline-link-preview/client'
+import '@nolebase/vitepress-plugin-inline-link-preview/client/style.css'
 
 // Nolebase HighlightTargetedHeading
 import {
   NolebaseHighlightTargetedHeading,
-} from '@nolebase/vitepress-plugin-highlight-targeted-heading/dist/client'
+} from '@nolebase/vitepress-plugin-highlight-targeted-heading/client'
 
-import '@nolebase/vitepress-plugin-highlight-targeted-heading/dist/client/style.css'
+import '@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css'
 
 // Nolebase GitChangelog
 import {
   NolebaseGitChangelogPlugin
-} from '@nolebase/vitepress-plugin-git-changelog/dist/client'
+} from '@nolebase/vitepress-plugin-git-changelog/client'
 
-import '@nolebase/vitepress-plugin-git-changelog/client/styles.css'
+import '@nolebase/vitepress-plugin-git-changelog/client/style.css'
 
 // Giscus Talk
 import { useData, useRoute } from 'vitepress';
