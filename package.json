@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "@nolebase/markdown-it-bi-directional-links": "^1.28.0",
+    "@nolebase/markdown-it-element-transform": "^1.28.0",
+    "@nolebase/vitepress-plugin-enhanced-readabilities": "^1.28.0",
+    "@nolebase/vitepress-plugin-inline-link-preview": "^1.28.0",
+    "@types/node": "^20.12.7"
+  },
+  "dependencies": {
+    "vitepress-plugin-comment-with-giscus": "^1.1.12"
+  }
+}
