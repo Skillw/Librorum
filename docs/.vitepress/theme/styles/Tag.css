@@ -1,0 +1,143 @@
+/** ---------------Arco样式--------------- */
+/** 卡片样式 */
+:deep(.arco-card) {
+    background: var(--vp-c-bg);
+  }
+  :deep(.arco-card-bordered) {
+    border: 1px solid var(--vp-c-gutter);
+  }
+  :deep(.arco-card-body) {
+    color: var(--vp-c-text-1);
+  }
+  
+  /** 列表样式 */
+  :deep(.arco-list) {
+    color: var(--vp-c-text-1);
+  }
+  :deep(.arco-list-bordered) {
+    border: 1px solid var(--vp-c-gutter);
+  }
+  :deep(.arco-list-split .arco-list-header) {
+    color: var(--vp-c-text-1);
+    border-bottom: 1px solid var(--vp-c-gutter);
+  }
+  :deep(.arco-list-split .arco-list-item:not(:last-child)) {
+    border-bottom: 1px solid var(--vp-c-gutter);
+  }
+  
+  /** 标签样式 */
+  :deep(.arco-tag) {
+    background-color: var(--vp-c-bg);
+  }
+  
+  /** ---------------自定义样式--------------- */
+  /** 头部样式 */
+  .main-container-tag .tag-header-wrapper {
+    padding: 24px 0;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 0 0 var(--vp-c-gutter);
+    -webkit-box-shadow: 0 1px 0 0 var(--vp-c-gutter);
+  }
+  .main-container-tag .tag-header-wrapper .tag-breadcrumb-icon {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--vp-c-divider);
+    vertical-align: middle;
+  }
+  .main-container-tag .tag-header-wrapper .tag-breadcrumb-icon .icon-svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    fill: #bec0bf;
+  }
+  svg:not(:root) {
+    overflow: hidden;
+  }
+  .main-container-tag .tag-header-wrapper .tag-breadcrumb-item {
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 16px;
+  }
+  
+  /** 标签样式 */
+  .main-container-tag .tag-item {
+    color: var(--vp-c-text-1);
+    border-radius: 50px;
+    line-height: 24px;
+    padding: 12px 12px;
+    margin: 8px 8px 0 0;
+    cursor: pointer;
+    border: 1px solid var(--vp-c-gutter);
+  }
+  .main-container-tag .tag-title {
+    margin-right: 6px;
+    word-break: normal;
+    white-space: pre-wrap;
+  }
+  .main-container-tag .tag-checkable-checked {
+    border-color: #3384f5;
+    color: #1672f3;
+  }
+  .main-container-tag .card-header {
+    color: var(--vp-c-text-1);
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @media (min-width: 1440px) {
+    :deep(.VPDoc:not(.has-sidebar) .content) {
+      max-width: 1104px;
+    }
+  }
+  @media (min-width: 960px) {
+    :deep(.VPDoc:not(.has-sidebar) .content) {
+      max-width: 1104px;
+    }
+  }
+  :deep(.content-container) {
+    max-width: 1104px;
+  }
+  
+  /** 文章列表样式 */
+  .main-container-tag .no-result {
+    text-align: center;
+  }
+  .main-container-tag .no-result svg {
+    height: 300px;
+    width: 300px;
+    margin: 40px auto 20px;
+  }
+  .result-item-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+  .result-item-description {
+    word-wrap: break-word;
+    line-height: 22px;
+    font-size: 14px;
+    margin: 8px 0;
+  }
+  
+  .vp-doc a {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--vp-c-text-1);
+    text-decoration: none;
+  }
+  .vp-doc a:hover {
+    color: var(--vp-c-brand-1);
+    text-decoration: underline;
+  }
+  .meta-content a {
+    font-size: 14px;
+    color: var(--vp-c-text-2);
+  }

@@ -1,7 +1,10 @@
 ---
-date: 2024-04-14
+title: asdadasdas
+author: Glomzzz
+date: 2020/10/02 21:29
+tags:
+- aaa
 ---
-
 # Markdown Extension Examples
 
 This page demonstrates some of the built-in markdown extensions provided by VitePress.
@@ -9,16 +12,6 @@ This page demonstrates some of the built-in markdown extensions provided by Vite
 ## Syntax Highlighting
 
 VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
-
-::: timeline 2023-05-24
-- **do some thing1**
-- do some thing2
-:::
-
-::: timeline 2023-05-23
-do some thing3
-do some thing4
-:::
 
 **Input**
 
@@ -97,5 +90,3 @@ This is a details block.
 ## More
 
 Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
-
-

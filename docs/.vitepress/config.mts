@@ -1,125 +1,137 @@
-import { defineConfig } from "vitepress";
+import { defineConfig } from 'vitepress'
+import{ defaultLang } from './config/langs';
+import { markdown } from './config/markdown';
+import { locales } from './locales';
 
-import { InlineLinkPreviewElementTransform } from '@nolebase/vitepress-plugin-inline-link-preview/markdown-it'
-
-import { BiDirectionalLinks, } from '@nolebase/markdown-it-bi-directional-links'
-import { cwd } from 'process';
-
-
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
-  lang: "zh-CN",
-  title: "Glomzzz's Home",
-  description: "Glomzzz's sweet home",
-  vite: { 
-    optimizeDeps: { 
-      include: [ 
-        '@nolebase/vitepress-plugin-enhanced-readabilities > @nolebase/ui > @rive-app/canvas', 
-      ], 
-    }, 
-    ssr: { 
-      noExternal: [ 
-        // 如果还有别的依赖需要添加的话，并排填写和配置到这里即可
-        '@nolebase/vitepress-plugin-enhanced-readabilities',
-        '@nolebase/vitepress-plugin-highlight-targeted-heading',
-      ], 
-    }, 
-  }, 
-
-
-  markdown:{
-    config: (md) => {
-      md.use(InlineLinkPreviewElementTransform);
-      md.use(BiDirectionalLinks({ 
-        dir: cwd(),
-      })) 
-    }
-  },
-
-
-  locales: {
-    root: {
-      label: "简体中文",
-      lang: "zh-CN",
-      title: "Glomzzz的家",
-      link: '/zh-CN/',
-      themeConfig: {
-        nav: [
-          { text: "博客", link: "/zh-CN/blog/" },
-          { text: "朋友们", link: "/zh-CN/friends" },
-        ],
-
-        sidebar: {},
-        search: {
-          provider: "local",
-          options: {
-            translations: {
-              button: {
-                buttonText: '搜索文档',
-                buttonAriaLabel: '搜索文档',
-              },
-              modal: {
-                noResultsText: '无法找到相关结果',
-                resetButtonTitle: '清除查询条件',
-                footer: {
-                  selectText: '选择',
-                  navigateText: '切换',
-                },
-              },
-            },
-          },
-        },
+  lang: defaultLang.lang,
+  //更简洁的url，去掉.html
+  cleanUrls: true,
+  //页面元数据可缓存，减少服务器带宽
+  metaChunk:true,
+  //最后更新时间
+  lastUpdated:true,
+  //导入markdown配置
+  markdown,
+  //导入locales配置
+  locales,
+  vue: {
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) => customElements.includes(tag),
       },
     },
-    en: {
-      label: "English",
-      lang: "en",
-      themeConfig:{
-        nav: [
-          { text: "Home", link: "/" },
-          { text: "Examples", link: "/markdown-examples" },
-        ],
-
-        sidebar: [
-          {
-            text: "Examples",
-            items: [
-              { text: "Markdown Examples", link: "/markdown-examples" },
-              { text: "Runtime API Examples", link: "/api-examples" },
-            ],
-          },
-        ],
-      }
-    },
   },
-  lastUpdated: true,
-  ignoreDeadLinks: [
-    // Site Config | VitePress
-    // https://vitepress.dev/reference/site-config#ignoredeadlinks
-    //
-    // ignore all localhost links
-    /^https?:\/\/localhost/,
-  ],
   themeConfig: {
-    outline: 'deep',
-    // https://vitepress.dev/reference/default-theme-config
-    logo: "/assets/logo.png",
-
-    siteTitle: "El psy congroo.",
-
-    socialLinks: [
-      { icon: "github", link: "https://github.com/Glomzzz" },
-      { icon: "discord", link: "https://discord.com/users/747730162577178624" },
-      // { icon: 'instagram', link: 'https://www.instagram.com/glomzzz0/' },
-      { icon: "youtube", link: "https://www.youtube.com/@Glomzzz" },
-      { icon: "x", link: "https://x.com/Glomzzz0" },
+    nav: [
+      { text: 'Home', link: '/' },
+      { text: 'Examples', link: '/markdown-examples' }
     ],
 
-    footer: {
-      message: "Released under the MIT License.",
-      copyright: "Copyright © 2024-present Glomzzz",
-    },
+    sidebar: [
+      {
+        text: 'Examples',
+        items: [
+          { text: 'Markdown Examples', link: '/markdown-examples' },
+          { text: 'Runtime API Examples', link: '/api-examples' },
+          { text: 'tag', link: '/tag' }
+        ]
+      }
+    ],
 
-    i18nRouting: true,
-  },
-});
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+    ]
+  }
+})
+
+const customElements = [
+  'mjx-container',
+  'mjx-assistive-mml',
+  'math',
+  'maction',
+  'maligngroup',
+  'malignmark',
+  'menclose',
+  'merror',
+  'mfenced',
+  'mfrac',
+  'mi',
+  'mlongdiv',
+  'mmultiscripts',
+  'mn',
+  'mo',
+  'mover',
+  'mpadded',
+  'mphantom',
+  'mroot',
+  'mrow',
+  'ms',
+  'mscarries',
+  'mscarry',
+  'mscarries',
+  'msgroup',
+  'mstack',
+  'mlongdiv',
+  'msline',
+  'mstack',
+  'mspace',
+  'msqrt',
+  'msrow',
+  'mstack',
+  'mstack',
+  'mstyle',
+  'msub',
+  'msup',
+  'msubsup',
+  'mtable',
+  'mtd',
+  'mtext',
+  'mtr',
+  'munder',
+  'munderover',
+  'semantics',
+  'math',
+  'mi',
+  'mn',
+  'mo',
+  'ms',
+  'mspace',
+  'mtext',
+  'menclose',
+  'merror',
+  'mfenced',
+  'mfrac',
+  'mpadded',
+  'mphantom',
+  'mroot',
+  'mrow',
+  'msqrt',
+  'mstyle',
+  'mmultiscripts',
+  'mover',
+  'mprescripts',
+  'msub',
+  'msubsup',
+  'msup',
+  'munder',
+  'munderover',
+  'none',
+  'maligngroup',
+  'malignmark',
+  'mtable',
+  'mtd',
+  'mtr',
+  'mlongdiv',
+  'mscarries',
+  'mscarry',
+  'msgroup',
+  'msline',
+  'msrow',
+  'mstack',
+  'maction',
+  'semantics',
+  'annotation',
+  'annotation-xml',
+  
+];
