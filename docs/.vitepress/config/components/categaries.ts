@@ -1,6 +1,6 @@
-import { LocalesConfig } from "../langs"
+import { localesOf } from "../../locales"
 
-type Categary = {
+export type Categary = {
     name:string,
     path:string,
     icon:string
@@ -8,7 +8,7 @@ type Categary = {
 
 type Config = Record<string,string>
 
-export const locales = new LocalesConfig<Config>({
+export const locales = localesOf<Config>({
     'zh-CN': {
         tech: '分类',
         life: '生活'
@@ -31,5 +31,4 @@ export const categaries:Record<string,Categary> = {
         icon: '/assets/categaries/life.svg'
     }
 }
-
 

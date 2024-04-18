@@ -48,7 +48,6 @@ import {
 } from '@nolebase/vitepress-plugin-page-properties/client'
 
 
-import Layout from './components/Layout.vue'
 import {properties} from '../config/components/properties'
 import TagList from './components/Tag.vue'
 import ArticleMetadata from './components/ArticleMetadata.vue'
@@ -57,7 +56,7 @@ import WordCloud from './components/WordCloud.vue'
 export const Theme: ThemeConfig = {
   extends: DefaultTheme,
   Layout: () => {
-    return h(Layout, null, {
+    return h(DefaultTheme.Layout, null, {
       'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu), 
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu), 
       'layout-top': () => [ 

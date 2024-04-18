@@ -1,4 +1,4 @@
-import { LocalesConfig } from "./langs";
+import { localesOf } from "../locales";
 
 export const image = './assets/logo.png';
 
@@ -8,7 +8,7 @@ export interface Site{
   unknown:string
 }
 
-export const locales = new LocalesConfig<Site>({
+export const locales = localesOf({
   'zh-CN':{
     title: 'Glom的禁书目录',
     description: '个人技术知识库，记录 & 分享个人碎片化、结构化、体系化的技术知识内容。',

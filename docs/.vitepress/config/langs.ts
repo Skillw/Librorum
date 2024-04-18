@@ -1,10 +1,9 @@
-import { lang } from "../locales";
 
 
- interface Lang{
+
+ export type Lang = {
     lang:string,
     label:string,
-    dir?:string
   }
   
   export const langs : Record<string,Lang> = {
@@ -19,13 +18,3 @@ import { lang } from "../locales";
   }
   
   export const defaultLang = langs['zh-CN'];
-
-  export class LocalesConfig<Config = any> {
-    data: Record<string, Config>;
-    constructor(locales: Record<string, Config>) {
-      this.data = locales
-    };
-    get(): Config {
-      return this.data[lang()];
-    }; 
-  }

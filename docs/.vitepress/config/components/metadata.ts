@@ -1,9 +1,8 @@
-import { LocalesConfig } from "../langs"
+import {localesOf } from "../../locales"
  
- type Config = {
+export type Config = {
     author: string,
     authorLink:string,
-    nullTitle: string,
     original:{
         name:string,
         time:string,
@@ -21,10 +20,9 @@ export const config = {
     showViewCount: false
 }
 
-export const locales = new LocalesConfig<Config>({
+export const locales = localesOf<Config>({
     'zh-CN' : {
         author: '作者',
-        nullTitle: '无标题',
         authorLink:'进入作者主页',
         original:{
             name:'原创',
@@ -41,7 +39,6 @@ export const locales = new LocalesConfig<Config>({
     'en': {
         author: 'Author',
         authorLink: 'Visit author\'s homepage',
-        nullTitle: 'No title',
         original: {
             name: 'Original',
             time: 'Publication time',

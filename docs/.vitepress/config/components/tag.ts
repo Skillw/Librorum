@@ -1,8 +1,8 @@
 
-import { LocalesConfig } from "../langs"
+import { localesOf  } from "../../locales"
 
 
- type Config = {
+export type Config = {
     title:string,
     count:string,
     description:string,
@@ -10,7 +10,7 @@ import { LocalesConfig } from "../langs"
 
 
 
-export const locales = new LocalesConfig<Config>({
+export const locales = localesOf<Config>({
     'zh-CN' : {
         title: '标签',
         count: '共 {count} 篇',

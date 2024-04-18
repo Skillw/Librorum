@@ -126,9 +126,12 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import { goToLink } from "../utils.ts";
 import { config, locales } from "../../config/components/metadata.ts";
 import { defaultAuthor } from "../../config/components/author.ts";
-
+import { useData } from "vitepress";
 dayjs.extend(relativeTime);
 dayjs.locale("zh-cn");
+
+const { lang } = useData()
+const locale = locales[lang.value];
 
 // 定义文章属性
 const props = defineProps({
@@ -138,8 +141,6 @@ const props = defineProps({
     default: true,
   },
 });
-
-let locale = locales.get();
 
 const data = reactive({
   isOriginal: props.article?.isOriginal ?? true,
@@ -163,8 +164,6 @@ const {
   tags,
   showCategory,
 } = toRefs(data);
-
-console.log(author);
 
 if (data.showViewCount) {
   // 记录并获取文章阅读数（使用文章标题 + 发布时间生成 MD5 值，作为文章的唯一标识）

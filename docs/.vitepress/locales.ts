@@ -1,17 +1,15 @@
-import  {LocaleConfig } from 'vitepress'
+import { LocaleConfig } from 'vitepress'
 import { locales as siteLocales } from './config/site'
 import { langs,defaultLang } from './config/langs'
 import { getNav } from './config/nav'
 
+export type LocalesConfig<Config = any> = Record<string, Config>
+
+export function localesOf<Config = any>(data:Record<string, Config>):LocalesConfig<Config>{
+  return data;
+}
 
 export const locales = genLocales()
-
-export function lang() {
-  return currentLang.lang;
-}
-export let currentLang = {
-  lang: defaultLang.lang
-};
 
 function genLocales():LocaleConfig{
     const config:any = {}
@@ -19,7 +17,7 @@ function genLocales():LocaleConfig{
       const lang = langs[name];
       config[name] = {
         ...langs[name],
-        ...siteLocales.data[name],
+        ...siteLocales[name],
         themeConfig:{
           nav: getNav(lang.lang),
         }

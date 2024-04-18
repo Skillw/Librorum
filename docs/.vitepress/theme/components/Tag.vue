@@ -95,10 +95,11 @@ import md5 from "blueimp-md5/js/md5.js";
 import { getQueryParam } from "../utils.ts";
 //@ts-ignore
 import { data as articleData } from "../../util/article.data.js";
-import { locales } from "../../config/components/tags.ts";
+import { locales } from "../../config/components/tag.ts";
+import { useData } from "vitepress";
 
-let locale = locales.get();
-
+const { lang } = useData()
+const locale = locales[lang.value];
 /**
  * 标签数据
  * {tagTitle1: [article1, article2, ...}
