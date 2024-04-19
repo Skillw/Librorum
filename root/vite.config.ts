@@ -6,7 +6,7 @@ import { PageProperties, PagePropertiesMarkdownSection } from '@nolebase/vitepre
 
 import Components from 'unplugin-vue-components/vite';
 import { ArcoResolver } from 'unplugin-vue-components/resolvers';
-
+import {excludes} from './.vitepress/config/components/properties'
 
 export default defineConfig(() => {
   return {
@@ -37,9 +37,9 @@ export default defineConfig(() => {
       ThumbnailHashImages(),
       PageProperties(),
       PagePropertiesMarkdownSection({
-        excludes: [
-          'index.md','tag.md','archive.md'
-        ],
+        exclude(path:string){
+          return excludes.find(b=>path.endsWith(b))
+        }
       }),
     ],
   }

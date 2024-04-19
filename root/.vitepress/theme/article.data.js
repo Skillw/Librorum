@@ -3,7 +3,7 @@ import {defaultLang, langs} from '../config/langs'
 
 const excludedFiles = ['index.md', 'tag.md', 'archive.md', 'me.md'];
 
-export default createContentLoader('*.md',{
+export default createContentLoader(['*.md','**/*.md'],{
   includeSrc:true,
   transform(raw){
     const articles = raw.filter(raw => {
@@ -22,7 +22,6 @@ export default createContentLoader('*.md',{
       if(!Object.keys(langs).includes(lang)){
         lang = defaultLang.lang
       }
-      console.log(page.url + " -> " + lang);
       const locale = locales[lang] || (locales[lang] = []);
       if(!page.frontmatter.title){
         const start = page.src.indexOf('#');

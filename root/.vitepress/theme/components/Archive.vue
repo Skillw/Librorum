@@ -144,7 +144,7 @@ const locale = archiveLocales[lang.value];
           $articleData.push(article);
         }
       }
-    } else {
+    } else if(articleData != undefined) {
       $articleData.push(...articleData);
     }
 

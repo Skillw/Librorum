@@ -1,5 +1,9 @@
 import { Property } from "@nolebase/vitepress-plugin-page-properties/client";
 
+export const excludes = [
+  'index.md','tag.md','archive.md'
+]
+
 export const properties:Record<string, Property<"progress" | "tags">[]> = {
   "zh-CN": [
     {
