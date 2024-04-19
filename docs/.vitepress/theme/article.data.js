@@ -1,6 +1,7 @@
 import { createContentLoader } from 'vitepress'
+import {defaultLang, langs} from '../config/langs'
 
-const excludedFiles = ['index.md', 'tag.md', 'archives.md', 'me.md'];
+const excludedFiles = ['index.md', 'tag.md', 'archive.md', 'me.md'];
 
 export default createContentLoader('*.md',{
   includeSrc:true,
@@ -12,9 +13,17 @@ export default createContentLoader('*.md',{
       }
       return !excludedFiles.includes(name);
     });
-    return articles.sort((a, b) => {
+    let locales = {};
+
+    articles.sort((a, b) => {
       return +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date)
-    }).map((page) => {
+    }).forEach((page) => {
+      var lang = page.url.slice(0, page.url.indexOf('/'));
+      if(!Object.keys(langs).includes(lang)){
+        lang = defaultLang.lang
+      }
+      console.log(page.url + " -> " + lang);
+      const locale = locales[lang] || (locales[lang] = []);
       if(!page.frontmatter.title){
         const start = page.src.indexOf('#');
         if(start !== -1){
@@ -24,11 +33,21 @@ export default createContentLoader('*.md',{
           page.frontmatter.title = 'No Title'
         }
       }
-      return {
+      if(!page.frontmatter.date){
+        page.frontmatter.date = '1919/08/10 11:45'
+      }
+      if(!page.frontmatter.tags){
+        page.frontmatter.tags = []
+      }
+      if(!page.frontmatter.category){
+        page.frontmatter.category = 'none'
+      }
+      locale.push({
         ...page.frontmatter,
         path: page.url
-      }
+      }); 
     })
+    return  locales;
   },
 })
 

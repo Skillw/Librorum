@@ -38,7 +38,7 @@ export default defineConfig(() => {
       PageProperties(),
       PagePropertiesMarkdownSection({
         excludes: [
-          'index.md','tags.md'
+          'index.md','tag.md','archive.md'
         ],
       }),
     ],

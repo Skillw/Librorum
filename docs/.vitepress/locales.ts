@@ -18,7 +18,7 @@ function genLocales():LocaleConfig{
       config[name] = {
         ...langs[name],
         ...siteLocales[name],
-        themeConfig:{
+        themeConfig: {
           nav: getNav(lang.lang),
         }
       }

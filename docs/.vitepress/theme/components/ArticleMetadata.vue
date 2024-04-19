@@ -2,11 +2,11 @@
   <div class="meta-wrapper">
     <div class="meta-item original">
       <a-tag v-if="isOriginal" color="green">
-        <img width="14" src="/assets/shared/award.svg" />
+        <img width="14" src="/assets/components/metadata/award.svg" />
         {{ locale.original.name }}
       </a-tag>
       <a-tag v-else color="arcoblue">
-        <img width="13" src="/assets/shared/share.svg" />
+        <img width="13" src="/assets/components/metadata/share.svg" />
         {{ locale.reprint.name }}
       </a-tag>
     </div>
@@ -18,7 +18,7 @@
           </img>
         </a>
         <span v-else :title="author">
-          <img width=13 src="/assets/shared/user.svg">
+          <img width=13 src="/assets/components/metadata/user.svg">
             <title>{{ locale.author }}</title>
           </img>  
         </span>
@@ -35,7 +35,7 @@
         <img
           role="img"
           width=15
-          src="/assets/shared/clock.svg"
+          src="/assets/components/metadata/clock.svg"
         >
           <title v-if="isOriginal">{{ locale.original.time }}</title>
           <title v-else>{{ locale.reprint.time }}</title>
@@ -61,7 +61,7 @@
         <img
           role="img"
           width=15
-          src="/assets/shared/eye.svg"
+          src="/assets/components/metadata/eye.svg"
         >
           <title>{{ locale.viewCount }}</title>
       </img>
@@ -73,22 +73,19 @@
         <img
           role="img"
           width=15
-          src="/assets/shared/folder.svg"
+          :src="category.icon"
         >
-          <title>{{ locale.categories }}</title>
+          <title>{{ locale.category }}</title>
       </img>
       </span>
       <span class="meta-content">
-        <span v-for="(category, index) in categories" :key="index">
-          <a
+        <a
             href="javascript:void(0);"
-            @click="goToLink('/archives', 'category', category)"
+            @click="goToLink(lang,'/archive', 'category', categoryName)"
             target="_self"
-            :title="category"
-            >{{ category }}</a
+            :title="categoryDisplay"
+            >{{ categoryDisplay }}</a
           >
-          <span v-if="index != categories.length - 1">, </span>
-        </span>
       </span>
     </div>
     <div class="meta-item tag">
@@ -96,7 +93,7 @@
         <img
           role="img"
           width=15
-          src="/assets/shared/tags.svg"
+          src="/assets/components/metadata/tags.svg"
         >
           <title>{{ locale.tags }}</title>
         </img>
@@ -105,7 +102,7 @@
         <span v-for="(tag, index) in tags" :key="index">
           <a
             href="javascript:void(0);"
-            @click="goToLink('/archives', 'tag', tag)"
+            @click="goToLink(lang,'/archive', 'tag', tag)"
             target="_self"
             :title="tag"
             >{{ tag }}</a
@@ -124,14 +121,15 @@ import dayjs from "dayjs";
 import "dayjs/locale/zh-cn";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { goToLink } from "../utils.ts";
-import { config, locales } from "../../config/components/metadata.ts";
-import { defaultAuthor } from "../../config/components/author.ts";
+import { config, locales as metadataLocales } from "../../config/components/metadata.ts";
+import { defaultAuthor } from "../../config/author.ts";
 import { useData } from "vitepress";
+import { categories,locales as categoryLocales } from "../../config/components/categories.ts"; 
+
 dayjs.extend(relativeTime);
 dayjs.locale("zh-cn");
-
 const { lang } = useData()
-const locale = locales[lang.value];
+const locale = metadataLocales[lang.value];
 
 // 定义文章属性
 const props = defineProps({
@@ -149,9 +147,9 @@ const data = reactive({
   showViewCount: config.showViewCount,
   viewCount: 0,
   date: new Date(props.article!.date),
-  categories: props.article?.categories ?? [],
+  categoryName: props.article?.category ?? 'none',
   tags: props.article?.tags ?? [],
-  showCategory: props.showCategory && props.article?.categories?.length > 0,
+  showCategory: props.showCategory && !props.article?.category,
 });
 const {
   isOriginal,
@@ -160,10 +158,13 @@ const {
   showViewCount,
   viewCount,
   date,
-  categories,
+  categoryName,
   tags,
   showCategory,
 } = toRefs(data);
+
+const category = categories[categoryName.value] ?? categories.none; 
+const categoryDisplay = categoryLocales[lang.value][categoryName.value] ?? categoryLocales[lang.value].none;
 
 if (data.showViewCount) {
   // 记录并获取文章阅读数（使用文章标题 + 发布时间生成 MD5 值，作为文章的唯一标识）

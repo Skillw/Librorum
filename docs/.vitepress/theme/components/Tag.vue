@@ -10,7 +10,7 @@
           height="1em"
           class="larkui-icon icon-svg index-module_size_wVASz"
           style="width: 16px; min-width: 16px; height: 16px"
-          src="/assets/shared/tag.svg"
+          src="/assets/components/tag/tag.svg"
         />
       </span>
       <span class="tag-breadcrumb-item">{{ locale.title }}</span>
@@ -78,7 +78,7 @@
                 role="img"
                 width="20%"
                 height="20%"
-                src="/assets/shared/none.svg"
+                src="/assets/components/tag/none.svg"
               />
             </div>
             <p>{{ locale.description }}</p>
@@ -94,11 +94,13 @@ import { computed, ref } from "vue";
 import md5 from "blueimp-md5/js/md5.js";
 import { getQueryParam } from "../utils.ts";
 //@ts-ignore
-import { data as articleData } from "../../util/article.data.js";
+import { data as localesData } from "../article.data.js";
 import { locales } from "../../config/components/tag.ts";
 import { useData } from "vitepress";
 
 const { lang } = useData()
+
+const articleData = localesData[lang.value] ?? [];
 const locale = locales[lang.value];
 /**
  * 标签数据

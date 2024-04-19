@@ -49,7 +49,8 @@ import {
 
 
 import {properties} from '../config/components/properties'
-import TagList from './components/Tag.vue'
+import Tag from './components/Tag.vue'
+import Archive from './components/Archive.vue'
 import ArticleMetadata from './components/ArticleMetadata.vue'
 import WordCloud from './components/WordCloud.vue'
 
@@ -78,7 +79,8 @@ export const Theme: ThemeConfig = {
     app.component('NolebaseUnlazyImg', NolebaseUnlazyImg)
     app.component('WordCloud',WordCloud)
     app.component('ArticleMetadata',ArticleMetadata)
-    app.component('Tag', TagList)
+    app.component('Tag', Tag)
+    app.component('Archive',Archive)
     app.use(NolebasePagePropertiesPlugin<{
       tags: string[]
       progress: number

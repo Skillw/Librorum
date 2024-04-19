@@ -1,4 +1,5 @@
 import type { DefaultTheme } from 'vitepress';
+import { genCategories } from './components/categories';
 /**
  * 导航栏配置 / Navigation configuration
  */
@@ -6,18 +7,18 @@ import type { DefaultTheme } from 'vitepress';
     'zh-CN':[
         {
             text: '文章',
-            link: '/blogs',
-            activeMatch: '/blogs'
+            items: genCategories('zh-CN'),
+            activeMatch: 'blogs'
         },
         {
           text: '标签',
-          link: '/tags',
-          activeMatch: '/tags'
+          link: '/tag',
+          activeMatch: 'tag'
         },
         {
-          text: '归档',
-          link: '/archives',
-          activeMatch: '/archives'
+          text: '时光轴',
+          link: '/archive',
+          activeMatch: '/archive'
         },
         {
           text: '关于',
@@ -31,18 +32,18 @@ import type { DefaultTheme } from 'vitepress';
     en:[
         {
             text: 'Blog',
-            link: '/blogs',
+            items: genCategories('en'),
             activeMatch: '/blogs'
         },
         {
           text: 'Tags',
-          link: '/tags',
-          activeMatch: '/tags'
+          link: '/tag',
+          activeMatch: '/tag'
         },
         {
-          text: 'Archives',
-          link: '/archives',
-          activeMatch: '/archives'
+          text: 'Archive',
+          link: '/archive',
+          activeMatch: '/archive'
         },
         {
           text: 'About',
@@ -63,8 +64,10 @@ export function getNav(lang:string,dir?:string):DefaultTheme.Config['nav']{
 }
 
 function addDir(dir:string,item:any){
+  if(item.routed) return;
+  item.routed = true;
   if(Array.isArray(item)){
-    item.forEach(i=>addDir(dir,i));
+    item.forEach((i)=>addDir(dir,i));
   }else{
     item.link = prefix(dir,item.link);
     item.activeMatch = prefix(dir,item.activeMatch);
@@ -75,5 +78,5 @@ function addDir(dir:string,item:any){
 }
 
 function prefix(dir:string,item?:string):string|undefined{
-  return item ? item.startsWith("!") ? item : `${dir}/${item}` : undefined;
+  return item ? (item.startsWith("!") ? item : `${dir}${item}`) : undefined;
 }
