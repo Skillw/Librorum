@@ -7,13 +7,20 @@ settings:
 importers:
 
   .:
+    dependencies:
+      gray-matter:
+        specifier: ^4.0.3
+        version: 4.0.3
+      typescript:
+        specifier: ^5.0.0
+        version: 5.4.5
     devDependencies:
       '@antv/g2plot':
         specifier: ^2.4.31
         version: 2.4.31
       '@arco-design/web-vue':
         specifier: ^2.55.1
-        version: 2.55.1(vue@3.4.23)
+        version: 2.55.1(vue@3.4.23(typescript@5.4.5))
       '@iconify-json/carbon':
         specifier: ^1.1.31
         version: 1.1.31
@@ -27,38 +34,41 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2
       '@nolebase/markdown-it-bi-directional-links':
-        specifier: 2.0.0-rc7
-        version: 2.0.0-rc7(markdown-it@13.0.2)
+        specifier: 2.0.0-rc8
+        version: 2.0.0-rc8(markdown-it@13.0.2)
       '@nolebase/markdown-it-unlazy-img':
-        specifier: 2.0.0-rc7
-        version: 2.0.0-rc7(@types/node@20.12.7)(less@4.2.0)(markdown-it@13.0.2)
+        specifier: 2.0.0-rc8
+        version: 2.0.0-rc8(@types/node@20.12.7)(less@4.2.0)(markdown-it@13.0.2)
       '@nolebase/ui':
-        specifier: 2.0.0-rc7
-        version: 2.0.0-rc7(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0))(vue@3.4.23)
+        specifier: 2.0.0-rc8
+        version: 2.0.0-rc8(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5))(vue@3.4.23(typescript@5.4.5))
       '@nolebase/vitepress-plugin-enhanced-readabilities':
-        specifier: 2.0.0-rc7
-        version: 2.0.0-rc7(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0))(vue@3.4.23)
+        specifier: 2.0.0-rc8
+        version: 2.0.0-rc8(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5))(vue@3.4.23(typescript@5.4.5))
       '@nolebase/vitepress-plugin-highlight-targeted-heading':
-        specifier: 2.0.0-rc7
-        version: 2.0.0-rc7(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0))
+        specifier: 2.0.0-rc8
+        version: 2.0.0-rc8(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5))
       '@nolebase/vitepress-plugin-inline-link-preview':
-        specifier: 2.0.0-rc7
-        version: 2.0.0-rc7(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0))(vue@3.4.23)
+        specifier: 2.0.0-rc8
+        version: 2.0.0-rc8(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5))(vue@3.4.23(typescript@5.4.5))
       '@nolebase/vitepress-plugin-og-image':
-        specifier: 2.0.0-rc7
-        version: 2.0.0-rc7(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0))
+        specifier: 2.0.0-rc8
+        version: 2.0.0-rc8(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5))
       '@nolebase/vitepress-plugin-page-properties':
-        specifier: 2.0.0-rc7
-        version: 2.0.0-rc7(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0))(vue@3.4.23)
+        specifier: 2.0.0-rc8
+        version: 2.0.0-rc8(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5))(vue@3.4.23(typescript@5.4.5))
       '@nolebase/vitepress-plugin-thumbnail-hash':
-        specifier: 2.0.0-rc7
-        version: 2.0.0-rc7(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0))
+        specifier: 2.0.0-rc8
+        version: 2.0.0-rc8(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5))
+      '@types/bun':
+        specifier: ^1.1.0
+        version: 1.1.0
       '@types/node':
         specifier: ^20.12.7
         version: 20.12.7
       '@vueuse/core':
         specifier: ^10.9.0
-        version: 10.9.0(vue@3.4.23)
+        version: 10.9.0(vue@3.4.23(typescript@5.4.5))
       blueimp-md5:
         specifier: ^2.19.0
         version: 2.19.0
@@ -79,7 +89,7 @@ importers:
         version: 0.59.4(postcss@8.4.38)(rollup@4.14.3)(vite@5.2.9(@types/node@20.12.7)(less@4.2.0))
       unplugin-vue-components:
         specifier: ^0.26.0
-        version: 0.26.0(@babel/parser@7.24.4)(rollup@4.14.3)(vue@3.4.23)
+        version: 0.26.0(@babel/parser@7.24.4)(rollup@4.14.3)(vue@3.4.23(typescript@5.4.5))
       vite:
         specifier: ^5.2.9
         version: 5.2.9(@types/node@20.12.7)(less@4.2.0)
@@ -88,10 +98,10 @@ importers:
         version: 0.8.3(rollup@4.14.3)(vite@5.2.9(@types/node@20.12.7)(less@4.2.0))
       vitepress:
         specifier: ^1.1.3
-        version: 1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)
+        version: 1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5)
       vue:
         specifier: ^3.4.23
-        version: 3.4.23
+        version: 3.4.23(typescript@5.4.5)
 
 packages:
 
@@ -667,23 +677,23 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nolebase/markdown-it-bi-directional-links@2.0.0-rc7':
-    resolution: {integrity: sha512-Lo+cbOIgwNo/N6F1ENH8gHNwBnjVVkjHSzW+Voqv7t/dqP7Eh4Q9g8hg65+c/OMzXgx8EMgdH/MANx4kgdxTpQ==}
+  '@nolebase/markdown-it-bi-directional-links@2.0.0-rc8':
+    resolution: {integrity: sha512-t8+t631hdNHQvO3hU3PY11DhazvzCCV9giZGDym+IO0u1AlmQwSSTy9nXUU9XbN3iEhBcJlbSItQ1qNvliKvhg==}
     peerDependencies:
       markdown-it: '>=13.0.1'
 
-  '@nolebase/markdown-it-element-transform@2.0.0-rc7':
-    resolution: {integrity: sha512-6dwla3NQ875f6TZ+AQkUVusa1bZ3KHmPvs8VsqavLUGWa6nksHWA1u7ldCR6ND2hi1+uiJLD4feWSOAfFoKmOw==}
+  '@nolebase/markdown-it-element-transform@2.0.0-rc8':
+    resolution: {integrity: sha512-85vjh1UMcdq71/67dfjYmDg+gF8EXM4F/b3aQJ6pR4YfBAMcGrVA4Hd6p1PLPpeDa9JZZsJUbwW5E1YhtZ4HZQ==}
     peerDependencies:
       markdown-it: '>=13.0.1'
 
-  '@nolebase/markdown-it-unlazy-img@2.0.0-rc7':
-    resolution: {integrity: sha512-xqSGjjDMchQq83mgwDBEssK0DGqJa/XFDqMLvKlI+6ZJotLYrfLgZWvJeg8giy+xLn6sJ0iM2E/1EJpGzujiGA==}
+  '@nolebase/markdown-it-unlazy-img@2.0.0-rc8':
+    resolution: {integrity: sha512-nLHf16xmR4Fq2yCDPE50i5+oBbHWBoGQu/FbtHjIeWNP0YHkRE096oOTZKXyOut9j4f9jXpXDexpy0jWZwinpw==}
     peerDependencies:
       markdown-it: '>=13.0.1'
 
-  '@nolebase/ui@2.0.0-rc7':
-    resolution: {integrity: sha512-CkmzPexGiP2PufAeU14r0iIrTBMOzAvepKwO7Gau9YGrcjwHO4wIZWIqV8nitVgWxn6lVP2qMiyXU4102pn3mw==}
+  '@nolebase/ui@2.0.0-rc8':
+    resolution: {integrity: sha512-voq6DMy+6Twx/AN2Ro5csQiYO4dFF8gehBdcf4BbItjbryqEDJvTEMvRkO47dXQlKw0HkHEDgo3hU5EJmAZxLQ==}
     peerDependencies:
       '@rive-app/canvas': ^2.11.1
       asciinema-player: ^3.7.1
@@ -697,33 +707,33 @@ packages:
       vitepress:
         optional: true
 
-  '@nolebase/vitepress-plugin-enhanced-readabilities@2.0.0-rc7':
-    resolution: {integrity: sha512-bdPnpexlmDY0KvJ5XkhkVoBMM0T8Zfq7AdM5LRybbm1eaYlTsFRzVlkN4NJf4EgcztyXCmZqaeLIDemfEI0Faw==}
+  '@nolebase/vitepress-plugin-enhanced-readabilities@2.0.0-rc8':
+    resolution: {integrity: sha512-w1djP+Lo0MtYF8rcZZeaiJommA0+AxFs9jCrCPYgX8fvxjKrao/Bwm4baFrFJ6YmNKTXQ8jYiDh0sVrm/4LC4w==}
     peerDependencies:
       vitepress: ^1.0.0
 
-  '@nolebase/vitepress-plugin-highlight-targeted-heading@2.0.0-rc7':
-    resolution: {integrity: sha512-WXXbTQfraUBSEbxcq7zlFK6DXItbUOXiAY7OnS/CkODqCwN+sWNE0eRpTZbEYXCoc3O0ZDPzLkYiJy9JyAcRBg==}
+  '@nolebase/vitepress-plugin-highlight-targeted-heading@2.0.0-rc8':
+    resolution: {integrity: sha512-78oupBe5I6HcrGzIUhPPSpxx/hwqfEOB3VMfz6QR7wS6d00CXs25FiSVP3Usvb9Z7pTC5kDDvzhdVdkVsFe+WQ==}
     peerDependencies:
       vitepress: ^1.0.0
 
-  '@nolebase/vitepress-plugin-inline-link-preview@2.0.0-rc7':
-    resolution: {integrity: sha512-W8QQ3X1M7358T52RE4cKC6ejx1Nnd+ur47AT4ceTEiLDOxxk65X/QnDzV8pIL+Z6jELKNT5qOTqJ69uBfn6Zvg==}
+  '@nolebase/vitepress-plugin-inline-link-preview@2.0.0-rc8':
+    resolution: {integrity: sha512-w2jX+8vc9CW30wbsxPyT/cuNKqAtc/PbClONyOq8MIIm7hhYrJfrJxpZYtTMRk5VblqNaWuCkvVxUp8pDaXJCg==}
     peerDependencies:
       vitepress: ^1.0.0
 
-  '@nolebase/vitepress-plugin-og-image@2.0.0-rc7':
-    resolution: {integrity: sha512-j9y2Xt4DgUUYTnMjEKQcs+LCm6fj2FfwtmfUYelbabCBtfOTFf1pdK0VSrKzZSAL61IEvgDNRy55sFbNukR3RQ==}
+  '@nolebase/vitepress-plugin-og-image@2.0.0-rc8':
+    resolution: {integrity: sha512-+29bL9+JyqP5qRVxNVwqWP+KK+kWhdcPazIZ9QWeccgwPn5eEa5asPOBIy8hlzc243lkWBuOI+B8jGFAHWYKjA==}
     peerDependencies:
       vitepress: ^1.0.0
 
-  '@nolebase/vitepress-plugin-page-properties@2.0.0-rc7':
-    resolution: {integrity: sha512-tAsd799ZQjbY1V6WHU7gEKzFzAyx5D5HHO3XkH26pcDglrv7iqiEE3ubM6/OmCg1eZHAC5ncTrAt0fSTGu5k9A==}
+  '@nolebase/vitepress-plugin-page-properties@2.0.0-rc8':
+    resolution: {integrity: sha512-oxrMCCyIKcOvrNf2r16nESc+G5mI0kgXcrFZCOu5X0QpzBd3aoXhHIwRuk5n+AfcCFbSj9gtGcSO3xFgAL3Wrg==}
     peerDependencies:
       vitepress: ^1.0.0
 
-  '@nolebase/vitepress-plugin-thumbnail-hash@2.0.0-rc7':
-    resolution: {integrity: sha512-xIXQsij5jeJ6sH1N1L6lFhhcbfb3GtJjixVl3nb22qlNSpTZFza3j8oIrDOMdge28Q1srtnOucw2r6kCLxRbeQ==}
+  '@nolebase/vitepress-plugin-thumbnail-hash@2.0.0-rc8':
+    resolution: {integrity: sha512-n0pJQD8iMredCdo5huzX1FGIOuarny8wiW5RDJpqor22Wn4qu86r9OegCKn+binUJ93diQWzviboP76nrEP60Q==}
     peerDependencies:
       vitepress: ^1.0.0
 
@@ -908,6 +918,9 @@ packages:
   '@shikijs/transformers@1.3.0':
     resolution: {integrity: sha512-3mlpg2I9CjhjE96dEWQOGeCWoPcyTov3s4aAsHmgvnTHa8MBknEnCQy8/xivJPSpD+olqOqIEoHnLfbNJK29AA==}
 
+  '@types/bun@1.1.0':
+    resolution: {integrity: sha512-QGK0yU4jh0OK1A7DyhPkQuKjHQCC5jSJa3dpWIEhHv/rPfb6zLfdArc4/uUUZBMTcjilsafRXnPWO+1owb572Q==}
+
   '@types/d3-timer@2.0.3':
     resolution: {integrity: sha512-jhAJzaanK5LqyLQ50jJNIrB8fjL9gwWZTgYjevPvkDLMU+kTAZkYsobI59nYoeSrH1PucuyJEi247Pb90t6XUg==}
 
@@ -929,6 +942,9 @@ packages:
   '@types/mdurl@1.0.5':
     resolution: {integrity: sha512-6L6VymKTzYSrEf4Nev4Xa1LCHKrlTlYCBMTlQKFuddo1CvQcE52I0mwfOJayueUC7MJuXOeHTcIU683lzd0cUA==}
 
+  '@types/node@20.11.30':
+    resolution: {integrity: sha512-dHM6ZxwlmuZaRmUPfv1p+KrdD1Dci04FbdEm/9wEMouFqxYoFl5aMkt0VMAUtYRQDyYvD41WJLukhq/ha3YuTw==}
+
   '@types/node@20.12.7':
     resolution: {integrity: sha512-wq0cICSkRLVaf3UGLMGItu/PtdY7oaXaI/RVU+xliKVOtRna3PRY57ZDfztpDL0n11vfymMUnXv8QwYCO7L1wg==}
 
@@ -937,6 +953,9 @@ packages:
 
   '@types/web-bluetooth@0.0.20':
     resolution: {integrity: sha512-g9gZnnXVq7gM7v3tJCWV/qw7w+KeOlSHAhgF9RytFyifW6AF61hdT2ucrYhPq9hLs5JIryeupHV3qGk95dH9ow==}
+
+  '@types/ws@8.5.10':
+    resolution: {integrity: sha512-vmQSUcfalpIq0R9q7uTo2lXs6eGIpt9wtnLdMv9LVpIjCA/+ufZRozlVoVelIYixx1ugCBKDhn89vnsEGOCx9A==}
 
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
@@ -1238,6 +1257,9 @@ packages:
     resolution: {integrity: sha512-QW8HiM1shhT2GuzkvklfjcKDiWFXHOeFCIA/huJPwHsslwcydgk7X+z2zXpEijP98UCY7HbubZt5J2Zgvf0CaQ==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
+
+  bun-types@1.1.0:
+    resolution: {integrity: sha512-GhMDD7TosdJzQPGUOcQD5PZshvXVxDfwGAZs2dq+eSaPsRn3iUCzvpFlsg7Q51bXVzLAUs+FWHlnmpgZ5UggIg==}
 
   bundle-name@4.1.0:
     resolution: {integrity: sha512-tjwM5exMg6BGRI+kNmTntNsvdZS1X8BFYS6tnJ2hdH0kVxM6/eVZ2xy+FqStSWvYmtfFMDLIxurorHwDKfDz5Q==}
@@ -2519,6 +2541,11 @@ packages:
     resolution: {integrity: sha512-/OxDN6OtAk5KBpGb28T+HZc2M+ADtvRxXrKKbUwtsLgdoxgX13hyy7ek6bFRl5+aBs2yZzB0c4CnQfAtVypW/g==}
     engines: {node: '>= 0.4'}
 
+  typescript@5.4.5:
+    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   uc.micro@1.0.6:
     resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==}
 
@@ -3011,7 +3038,7 @@ snapshots:
     dependencies:
       color: 3.2.1
 
-  '@arco-design/web-vue@2.55.1(vue@3.4.23)':
+  '@arco-design/web-vue@2.55.1(vue@3.4.23(typescript@5.4.5))':
     dependencies:
       '@arco-design/color': 0.4.0
       b-tween: 0.3.3
@@ -3021,7 +3048,7 @@ snapshots:
       number-precision: 1.6.0
       resize-observer-polyfill: 1.5.1
       scroll-into-view-if-needed: 2.2.31
-      vue: 3.4.23
+      vue: 3.4.23(typescript@5.4.5)
 
   '@babel/code-frame@7.24.2':
     dependencies:
@@ -3434,17 +3461,17 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  '@nolebase/markdown-it-bi-directional-links@2.0.0-rc7(markdown-it@13.0.2)':
+  '@nolebase/markdown-it-bi-directional-links@2.0.0-rc8(markdown-it@13.0.2)':
     dependencies:
       colorette: 2.0.20
       glob: 10.3.12
       markdown-it: 13.0.2
 
-  '@nolebase/markdown-it-element-transform@2.0.0-rc7(markdown-it@13.0.2)':
+  '@nolebase/markdown-it-element-transform@2.0.0-rc8(markdown-it@13.0.2)':
     dependencies:
       markdown-it: 13.0.2
 
-  '@nolebase/markdown-it-unlazy-img@2.0.0-rc7(@types/node@20.12.7)(less@4.2.0)(markdown-it@13.0.2)':
+  '@nolebase/markdown-it-unlazy-img@2.0.0-rc8(@types/node@20.12.7)(less@4.2.0)(markdown-it@13.0.2)':
     dependencies:
       colorette: 2.0.20
       glob: 10.3.12
@@ -3459,50 +3486,50 @@ snapshots:
       - sugarss
       - terser
 
-  '@nolebase/ui@2.0.0-rc7(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0))(vue@3.4.23)':
+  '@nolebase/ui@2.0.0-rc8(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5))(vue@3.4.23(typescript@5.4.5))':
     dependencies:
       '@iconify-json/octicon': 1.1.53
       less: 4.2.0
-      vue: 3.4.23
+      vue: 3.4.23(typescript@5.4.5)
     optionalDependencies:
       '@rive-app/canvas': 2.14.3
       asciinema-player: 3.7.1
-      vitepress: 1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)
+      vitepress: 1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5)
 
-  '@nolebase/vitepress-plugin-enhanced-readabilities@2.0.0-rc7(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0))(vue@3.4.23)':
+  '@nolebase/vitepress-plugin-enhanced-readabilities@2.0.0-rc8(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5))(vue@3.4.23(typescript@5.4.5))':
     dependencies:
       '@iconify-json/carbon': 1.1.31
       '@iconify-json/icon-park-outline': 1.1.15
-      '@nolebase/ui': 2.0.0-rc7(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0))(vue@3.4.23)
+      '@nolebase/ui': 2.0.0-rc8(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5))(vue@3.4.23(typescript@5.4.5))
       less: 4.2.0
-      vitepress: 1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)
+      vitepress: 1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5)
     transitivePeerDependencies:
       - '@rive-app/canvas'
       - asciinema-player
       - vue
 
-  '@nolebase/vitepress-plugin-highlight-targeted-heading@2.0.0-rc7(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0))':
+  '@nolebase/vitepress-plugin-highlight-targeted-heading@2.0.0-rc8(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5))':
     dependencies:
       less: 4.2.0
-      vitepress: 1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)
+      vitepress: 1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5)
 
-  '@nolebase/vitepress-plugin-inline-link-preview@2.0.0-rc7(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0))(vue@3.4.23)':
+  '@nolebase/vitepress-plugin-inline-link-preview@2.0.0-rc8(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5))(vue@3.4.23(typescript@5.4.5))':
     dependencies:
       '@iconify-json/icon-park-outline': 1.1.15
       '@iconify-json/octicon': 1.1.53
       '@iconify-json/svg-spinners': 1.1.2
-      '@nolebase/markdown-it-element-transform': 2.0.0-rc7(markdown-it@13.0.2)
-      '@nolebase/ui': 2.0.0-rc7(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0))(vue@3.4.23)
+      '@nolebase/markdown-it-element-transform': 2.0.0-rc8(markdown-it@13.0.2)
+      '@nolebase/ui': 2.0.0-rc8(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5))(vue@3.4.23(typescript@5.4.5))
       less: 4.2.0
       markdown-it: 13.0.2
       markdown-it-attrs: 4.1.6(markdown-it@13.0.2)
-      vitepress: 1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)
+      vitepress: 1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5)
     transitivePeerDependencies:
       - '@rive-app/canvas'
       - asciinema-player
       - vue
 
-  '@nolebase/vitepress-plugin-og-image@2.0.0-rc7(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0))':
+  '@nolebase/vitepress-plugin-og-image@2.0.0-rc8(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5))':
     dependencies:
       '@resvg/resvg-js': 2.6.2
       colorette: 2.0.20
@@ -3516,25 +3543,25 @@ snapshots:
       rehype-parse: 9.0.0
       rehype-stringify: 10.0.0
       unified: 11.0.4
-      vitepress: 1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)
+      vitepress: 1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5)
 
-  '@nolebase/vitepress-plugin-page-properties@2.0.0-rc7(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0))(vue@3.4.23)':
+  '@nolebase/vitepress-plugin-page-properties@2.0.0-rc8(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5))(vue@3.4.23(typescript@5.4.5))':
     dependencies:
       '@iconify-json/icon-park-outline': 1.1.15
       '@iconify-json/octicon': 1.1.53
-      '@nolebase/ui': 2.0.0-rc7(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0))(vue@3.4.23)
+      '@nolebase/ui': 2.0.0-rc8(@rive-app/canvas@2.14.3)(asciinema-player@3.7.1)(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5))(vue@3.4.23(typescript@5.4.5))
       date-fns: 3.6.0
       gray-matter: 4.0.3
       less: 4.2.0
       markdown-it: 13.0.2
       uuid: 9.0.1
-      vitepress: 1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)
+      vitepress: 1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5)
     transitivePeerDependencies:
       - '@rive-app/canvas'
       - asciinema-player
       - vue
 
-  '@nolebase/vitepress-plugin-thumbnail-hash@2.0.0-rc7(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0))':
+  '@nolebase/vitepress-plugin-thumbnail-hash@2.0.0-rc8(vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5))':
     dependencies:
       '@napi-rs/canvas': 0.1.52
       '@unlazy/vue': 0.11.3
@@ -3545,7 +3572,7 @@ snapshots:
       thumbhash: 0.1.1
       uncrypto: 0.1.3
       unlazy: 0.11.3
-      vitepress: 1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)
+      vitepress: 1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5)
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
@@ -3668,6 +3695,10 @@ snapshots:
     dependencies:
       shiki: 1.3.0
 
+  '@types/bun@1.1.0':
+    dependencies:
+      bun-types: 1.1.0
+
   '@types/d3-timer@2.0.3': {}
 
   '@types/estree@1.0.5': {}
@@ -3689,6 +3720,10 @@ snapshots:
 
   '@types/mdurl@1.0.5': {}
 
+  '@types/node@20.11.30':
+    dependencies:
+      undici-types: 5.26.5
+
   '@types/node@20.12.7':
     dependencies:
       undici-types: 5.26.5
@@ -3696,6 +3731,10 @@ snapshots:
   '@types/unist@3.0.2': {}
 
   '@types/web-bluetooth@0.0.20': {}
+
+  '@types/ws@8.5.10':
+    dependencies:
+      '@types/node': 20.12.7
 
   '@ungap/structured-clone@1.2.0': {}
 
@@ -3858,10 +3897,10 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
-  '@vitejs/plugin-vue@5.0.4(vite@5.2.9(@types/node@20.12.7)(less@4.2.0))(vue@3.4.23)':
+  '@vitejs/plugin-vue@5.0.4(vite@5.2.9(@types/node@20.12.7)(less@4.2.0))(vue@3.4.23(typescript@5.4.5))':
     dependencies:
       vite: 5.2.9(@types/node@20.12.7)(less@4.2.0)
-      vue: 3.4.23
+      vue: 3.4.23(typescript@5.4.5)
 
   '@vue/compiler-core@3.4.23':
     dependencies:
@@ -3893,20 +3932,20 @@ snapshots:
       '@vue/compiler-dom': 3.4.23
       '@vue/shared': 3.4.23
 
-  '@vue/devtools-api@7.0.27(vue@3.4.23)':
+  '@vue/devtools-api@7.0.27(vue@3.4.23(typescript@5.4.5))':
     dependencies:
-      '@vue/devtools-kit': 7.0.27(vue@3.4.23)
+      '@vue/devtools-kit': 7.0.27(vue@3.4.23(typescript@5.4.5))
     transitivePeerDependencies:
       - vue
 
-  '@vue/devtools-kit@7.0.27(vue@3.4.23)':
+  '@vue/devtools-kit@7.0.27(vue@3.4.23(typescript@5.4.5))':
     dependencies:
       '@vue/devtools-shared': 7.0.27
       hookable: 5.5.3
       mitt: 3.0.1
       perfect-debounce: 1.0.0
       speakingurl: 14.0.1
-      vue: 3.4.23
+      vue: 3.4.23(typescript@5.4.5)
 
   '@vue/devtools-shared@7.0.27':
     dependencies:
@@ -3927,29 +3966,29 @@ snapshots:
       '@vue/shared': 3.4.23
       csstype: 3.1.3
 
-  '@vue/server-renderer@3.4.23(vue@3.4.23)':
+  '@vue/server-renderer@3.4.23(vue@3.4.23(typescript@5.4.5))':
     dependencies:
       '@vue/compiler-ssr': 3.4.23
       '@vue/shared': 3.4.23
-      vue: 3.4.23
+      vue: 3.4.23(typescript@5.4.5)
 
   '@vue/shared@3.4.23': {}
 
-  '@vueuse/core@10.9.0(vue@3.4.23)':
+  '@vueuse/core@10.9.0(vue@3.4.23(typescript@5.4.5))':
     dependencies:
       '@types/web-bluetooth': 0.0.20
       '@vueuse/metadata': 10.9.0
-      '@vueuse/shared': 10.9.0(vue@3.4.23)
-      vue-demi: 0.14.7(vue@3.4.23)
+      '@vueuse/shared': 10.9.0(vue@3.4.23(typescript@5.4.5))
+      vue-demi: 0.14.7(vue@3.4.23(typescript@5.4.5))
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
 
-  '@vueuse/integrations@10.9.0(focus-trap@7.5.4)(vue@3.4.23)':
+  '@vueuse/integrations@10.9.0(focus-trap@7.5.4)(vue@3.4.23(typescript@5.4.5))':
     dependencies:
-      '@vueuse/core': 10.9.0(vue@3.4.23)
-      '@vueuse/shared': 10.9.0(vue@3.4.23)
-      vue-demi: 0.14.7(vue@3.4.23)
+      '@vueuse/core': 10.9.0(vue@3.4.23(typescript@5.4.5))
+      '@vueuse/shared': 10.9.0(vue@3.4.23(typescript@5.4.5))
+      vue-demi: 0.14.7(vue@3.4.23(typescript@5.4.5))
     optionalDependencies:
       focus-trap: 7.5.4
     transitivePeerDependencies:
@@ -3958,9 +3997,9 @@ snapshots:
 
   '@vueuse/metadata@10.9.0': {}
 
-  '@vueuse/shared@10.9.0(vue@3.4.23)':
+  '@vueuse/shared@10.9.0(vue@3.4.23(typescript@5.4.5))':
     dependencies:
-      vue-demi: 0.14.7(vue@3.4.23)
+      vue-demi: 0.14.7(vue@3.4.23(typescript@5.4.5))
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -4083,6 +4122,11 @@ snapshots:
       electron-to-chromium: 1.4.744
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.23.0)
+
+  bun-types@1.1.0:
+    dependencies:
+      '@types/node': 20.11.30
+      '@types/ws': 8.5.10
 
   bundle-name@4.1.0:
     dependencies:
@@ -5545,6 +5589,8 @@ snapshots:
       is-typed-array: 1.1.13
       possible-typed-array-names: 1.0.0
 
+  typescript@5.4.5: {}
+
   uc.micro@1.0.6: {}
 
   ufo@1.5.3: {}
@@ -5644,7 +5690,7 @@ snapshots:
       - rollup
       - supports-color
 
-  unplugin-vue-components@0.26.0(@babel/parser@7.24.4)(rollup@4.14.3)(vue@3.4.23):
+  unplugin-vue-components@0.26.0(@babel/parser@7.24.4)(rollup@4.14.3)(vue@3.4.23(typescript@5.4.5)):
     dependencies:
       '@antfu/utils': 0.7.7
       '@rollup/pluginutils': 5.1.0(rollup@4.14.3)
@@ -5656,7 +5702,7 @@ snapshots:
       minimatch: 9.0.4
       resolve: 1.22.8
       unplugin: 1.10.1
-      vue: 3.4.23
+      vue: 3.4.23(typescript@5.4.5)
     optionalDependencies:
       '@babel/parser': 7.24.4
     transitivePeerDependencies:
@@ -5720,23 +5766,23 @@ snapshots:
       fsevents: 2.3.3
       less: 4.2.0
 
-  vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0):
+  vitepress@1.1.3(@algolia/client-search@4.23.3)(@types/node@20.12.7)(less@4.2.0)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5):
     dependencies:
       '@docsearch/css': 3.6.0
       '@docsearch/js': 3.6.0(@algolia/client-search@4.23.3)(search-insights@2.13.0)
       '@shikijs/core': 1.3.0
       '@shikijs/transformers': 1.3.0
       '@types/markdown-it': 14.0.1
-      '@vitejs/plugin-vue': 5.0.4(vite@5.2.9(@types/node@20.12.7)(less@4.2.0))(vue@3.4.23)
-      '@vue/devtools-api': 7.0.27(vue@3.4.23)
-      '@vueuse/core': 10.9.0(vue@3.4.23)
-      '@vueuse/integrations': 10.9.0(focus-trap@7.5.4)(vue@3.4.23)
+      '@vitejs/plugin-vue': 5.0.4(vite@5.2.9(@types/node@20.12.7)(less@4.2.0))(vue@3.4.23(typescript@5.4.5))
+      '@vue/devtools-api': 7.0.27(vue@3.4.23(typescript@5.4.5))
+      '@vueuse/core': 10.9.0(vue@3.4.23(typescript@5.4.5))
+      '@vueuse/integrations': 10.9.0(focus-trap@7.5.4)(vue@3.4.23(typescript@5.4.5))
       focus-trap: 7.5.4
       mark.js: 8.11.1
       minisearch: 6.3.0
       shiki: 1.3.0
       vite: 5.2.9(@types/node@20.12.7)(less@4.2.0)
-      vue: 3.4.23
+      vue: 3.4.23(typescript@5.4.5)
     optionalDependencies:
       postcss: 8.4.38
     transitivePeerDependencies:
@@ -5766,17 +5812,19 @@ snapshots:
       - typescript
       - universal-cookie
 
-  vue-demi@0.14.7(vue@3.4.23):
+  vue-demi@0.14.7(vue@3.4.23(typescript@5.4.5)):
     dependencies:
-      vue: 3.4.23
+      vue: 3.4.23(typescript@5.4.5)
 
-  vue@3.4.23:
+  vue@3.4.23(typescript@5.4.5):
     dependencies:
       '@vue/compiler-dom': 3.4.23
       '@vue/compiler-sfc': 3.4.23
       '@vue/runtime-dom': 3.4.23
-      '@vue/server-renderer': 3.4.23(vue@3.4.23)
+      '@vue/server-renderer': 3.4.23(vue@3.4.23(typescript@5.4.5))
       '@vue/shared': 3.4.23
+    optionalDependencies:
+      typescript: 5.4.5
 
   web-namespaces@2.0.1: {}
 

@@ -91,11 +91,12 @@
 
 <script lang="ts" setup>
 import { computed, ref } from "vue";
+//@ts-ignore
 import md5 from "blueimp-md5/js/md5.js";
-import { getQueryParam } from "../utils.ts";
+import { getQueryParam } from "../utils";
 //@ts-ignore
 import { data as localesData } from "../article.data.js";
-import { locales } from "../../config/components/tag.ts";
+import { locales } from "../../config/components/tag";
 import { useData } from "vitepress";
 
 const { lang } = useData()
@@ -107,18 +108,18 @@ const locale = locales[lang.value];
  * {tagTitle1: [article1, article2, ...}
  */
 const tags = computed(() => {
-  let tags = {};
-  articleData.forEach((article) => {
+  let tags : any = {};
+  articleData.forEach((article:any) => {
     const articleTags = article.tags;
     if (!Array.isArray(articleTags)) return;
-    articleTags.forEach((tagName) => {
+    articleTags.forEach((tagName:string) => {
       let tag = tags[tagName];
       if (!tag) {
         tags[tagName] = [article];
         return;
       }
       tag.push(article);
-      tag.sort((a, b) => b.date.localeCompare(a.date)); // 按时间倒序
+      tag.sort((a:any, b:any) => b.date?.localeCompare(a.date) ?? false); // 按时间倒序
     });
   });
   return tags;

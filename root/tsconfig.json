@@ -25,7 +25,6 @@
   "include": [
     "**/*.ts",
     "**/*.d.ts",
-    "**/*.data.js",
     "**/*.tsx",
     "**/*.vue",
     ".vitepress/**/*.ts",

@@ -1,16 +1,14 @@
 import { createContentLoader } from 'vitepress'
-import {defaultLang, langs} from '../config/langs'
+import {defaultLang, langs} from '../config/locales'
+import { locales as tagLocales } from '../config/components/tag';
 
-const excludedFiles = ['index.md', 'tag.md', 'archive.md', 'me.md'];
+const excludedFiles = ['tag.md', 'archive.md', 'me.md'];
 
 export default createContentLoader(['*.md','**/*.md'],{
   includeSrc:true,
   transform(raw){
     const articles = raw.filter(raw => {
       let name = (raw.url.lastIndexOf('/') === -1 ? raw.url : raw.url.slice(raw.url.lastIndexOf('/') + 1)) + '.md';
-      if(name == '.md' || name.endsWith('/.md')){
-        name = name.replace('.md', 'index.md');
-      }
       return !excludedFiles.includes(name);
     });
     let locales = {};
@@ -18,7 +16,10 @@ export default createContentLoader(['*.md','**/*.md'],{
     articles.sort((a, b) => {
       return +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date)
     }).forEach((page) => {
-      var lang = page.url.slice(0, page.url.indexOf('/'));
+      var lang = page.url.split('/')[0];
+      if(lang == ''){
+        lang = page.url.split('/')[1]
+      }
       if(!Object.keys(langs).includes(lang)){
         lang = defaultLang.lang
       }
@@ -32,11 +33,8 @@ export default createContentLoader(['*.md','**/*.md'],{
           page.frontmatter.title = 'No Title'
         }
       }
-      if(!page.frontmatter.date){
-        page.frontmatter.date = '1919/08/10 11:45'
-      }
       if(!page.frontmatter.tags){
-        page.frontmatter.tags = []
+        page.frontmatter.tags = [tagLocales[lang].none]
       }
       if(!page.frontmatter.category){
         page.frontmatter.category = 'none'

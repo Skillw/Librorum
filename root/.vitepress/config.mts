@@ -1,8 +1,25 @@
 import { defineConfig } from 'vitepress'
-import{ defaultLang } from './config/langs';
+import{ defaultLang,langs } from './config/locales';
 import { markdown } from './config/markdown';
-import { locales } from './locales';
+import { getNav } from './config/nav'
+import { locales as sidebarLocales } from './config/sidebar'
+import { locales as siteLocales } from './config/site'
 
+export const locales = (()=>{
+  const config:any = {}
+  for(const name in langs){
+    const lang = langs[name];
+    config[name] = {
+      ...langs[name],
+      ...siteLocales[name],
+      themeConfig: {
+        nav: getNav(lang.lang),
+        sidebar: sidebarLocales[name]
+      }
+    }
+  }
+  return config
+})()
 export default defineConfig({
   lang: defaultLang.lang,
   //更简洁的url，去掉.html

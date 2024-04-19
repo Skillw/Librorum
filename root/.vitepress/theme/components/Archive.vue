@@ -41,13 +41,13 @@
     <!-- 时间轴主体 -->
     <div class="timeline-item" v-for="(item, year) in archiveData">
       <div class="year" @click="goToLink(lang,'/archive', 'year', year)">
-        <img class="chinese-zodiac" width="20"  :src="'/assets/components/archive/chinese-zodiac/' + getChineseZodiac(year.replace('年', '')) + '.svg'" :title="getChineseZodiacAlias(year.replace('年', ''))" alt="生肖"/>
-        <a >{{ year }} {{ locale.year }}</a>
+        <img class="chinese-zodiac" width="20"  :src="'/assets/components/archive/chinese-zodiac/' + getChineseZodiac(year) + '.svg'" :title="year != 0 ? locale.years[year % 12] : locale.unknownYear" :alt="locale.zodiac"/>
+        <a >{{ year != 0 ? year + locale.year : locale.unknownYear }}</a>
       </div>
       <div class="timeline-item-content">
         <div v-for="(articles, month) in item">
           <span class="month">
-            {{ locale.months[month] }}
+            {{ month != 0 ? locale.months[month] : locale.unkownMouth }}
           </span>
           <div class="articles">
             <span v-for="article in articles" class="article">
@@ -66,9 +66,9 @@
 
 <script lang="ts" setup>
   import { useData } from "vitepress";
-  import { getQueryParam, goToLink } from '../utils.ts';
-  import { categories,locales as categoryLocales } from "../../config/components/categories.ts"; 
-  import { locales as archiveLocales } from "../../config/components/archive.ts"; 
+  import { getQueryParam, goToLink } from '../utils';
+  import { categories,locales as categoryLocales } from "../../config/components/categories"; 
+  import { locales as archiveLocales } from "../../config/components/archive"; 
 
 //@ts-ignore
 import { data as localesData } from "../article.data.js";
@@ -83,30 +83,21 @@ const locale = archiveLocales[lang.value];
  *
  * @param year 年份
  */
-  function getChineseZodiac(year) {
+function getChineseZodiac(year:number) {
+  if(year == 0) return 'question';
   const arr = ['monkey', 'rooster', 'dog', 'pig', 'rat', 'ox', 'tiger', 'rabbit', 'dragon', 'snake', 'horse', 'goat'];
   return arr[year % 12];
 }
 
-/**
- * 获取生肖名称
- *
- * @param year 年份
- */
- function getChineseZodiacAlias(year) {
-  const arr = ['猴年', '鸡年', '狗年', '猪年', '鼠年', '牛年', '虎年', '兔年', '龙年', '蛇年', '马年', '羊年'];
-  return arr[year % 12];
-}
-
   // 文章原始数据和归档数据
-  let $articleData;
-  let archiveData;
+  let $articleData:any[];
+  let archiveData:any;
 
   // 要筛选的分类、标签、年份
-  let $category;
-  let $categoryDisplay;
-  let $tag;
-  let $year;
+  let $category: string | null;
+  let $categoryDisplay: string;
+  let $tag: string | null;
+  let $year: string | null;
 
   /**
    * 初始化时间轴
@@ -120,7 +111,7 @@ const locale = archiveLocales[lang.value];
     // 例如: /archives?tag=JVM
     // 例如: /archives?year=2020
     $category = getQueryParam('category');
-    $categoryDisplay = categoryLocales[lang.value][$category] ?? categoryLocales[lang.value]['none'];
+    $categoryDisplay = $category ? categoryLocales[lang.value][$category] : categoryLocales[lang.value]['none'];
     $tag = getQueryParam('tag');
     $year = getQueryParam('year');
     if ($category && $category.trim() != '') {
@@ -140,7 +131,7 @@ const locale = archiveLocales[lang.value];
     } else if ($year && $year.trim() != '') {
       for (let i = 0; i < articleData.length; i++) {
         let article = articleData[i];
-        if (article.date && new Date(article.date).getFullYear() == $year) {
+        if (article.date && new Date(article.date).getFullYear() == Number.parseInt($year)) {
           $articleData.push(article);
         }
       }
@@ -150,12 +141,13 @@ const locale = archiveLocales[lang.value];
 
     // 文章数据归档处理
     // 1.对文章数据进行降序排序
-    $articleData.sort((a, b) => b.date.localeCompare(a.date));
+    $articleData.sort((a, b) => b.date?.localeCompare(a.date) ?? false);
     // 2.按年、月进行归档
     for (let i = 0; i < $articleData.length; i++) {
       const article = $articleData[i];
-      let year = (new Date(article.date).getFullYear());
-      let month = (new Date(article.date).getMonth() + 1);
+      let date = article.date ? new Date(article.date) : null;
+      let year = date?.getFullYear() ?? 0;
+      let month = date?.getMonth() ?? 0;
 
       if (!archiveData[year]) {
         archiveData[year] = {};

@@ -37,8 +37,9 @@ export default defineConfig(() => {
       ThumbnailHashImages(),
       PageProperties(),
       PagePropertiesMarkdownSection({
-        exclude(path:string){
-          return excludes.find(b=>path.endsWith(b))
+        exclude(path:string):boolean{
+          // 这里的type是strict的，所以需要显式的返回boolean
+          return excludes.find(b=> path.endsWith(b)) ? true : false;
         }
       }),
     ],

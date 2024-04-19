@@ -6,7 +6,7 @@
  * @param paramName 参数名
  * @returns 参数值
  */
-export function getQueryParam(paramName) {
+export function getQueryParam(paramName:string) {
   const reg = new RegExp("(^|&)"+ paramName +"=([^&]*)(&|$)");
   let value = decodeURIComponent(window.location.search.substr(1)).match(reg);
   if (value != null) {
@@ -21,7 +21,7 @@ export function getQueryParam(paramName) {
  * @param paramName 参数名
  * @param paramValue 参数值
  */
-export function goToLink(lang, url, paramName, paramValue) {
+export function goToLink(lang:string, url:string, paramName:string, paramValue:string) {
   if (paramName) {
     window.location.href = '/'+ lang + url + '?' + paramName + '=' + paramValue;
   } else {

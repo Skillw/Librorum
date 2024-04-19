@@ -1,10 +1,11 @@
 import { Property } from "@nolebase/vitepress-plugin-page-properties/client";
+import { localesOf } from "../locales";
 
 export const excludes = [
   'index.md','tag.md','archive.md'
 ]
 
-export const properties:Record<string, Property<"progress" | "tags">[]> = {
+export const properties = localesOf<Property<"progress" | "tags">[]>( {
   "zh-CN": [
     {
       key: "tags",
@@ -63,4 +64,4 @@ export const properties:Record<string, Property<"progress" | "tags">[]> = {
       },
     },
   ],
-};
+})

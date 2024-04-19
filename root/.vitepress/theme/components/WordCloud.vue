@@ -15,7 +15,7 @@
   })
 
   // 渲染 WordCloud
-  let wordCloud;
+  let wordCloud:WordCloud;
   onMounted(() => {
     wordCloud = new WordCloud("wordcloud-container", {
       data: props.dataList as Record<string, any>[],

@@ -12,14 +12,12 @@
     </div>
     <div class="meta-item">
       <span class="meta-icon author">
-        <a v-if="isOriginal" :title="author" :href="authorLink"> 
+        <a v-if="isOriginal" :title="locale.author" :href="authorLink"> 
           <img width=20 src="/assets/owner.png">
-            <title>{{ locale.author }}</title>
           </img>
         </a>
-        <span v-else :title="author">
+        <span v-else :title="locale.author">
           <img width=13 src="/assets/components/metadata/user.svg">
-            <title>{{ locale.author }}</title>
           </img>  
         </span>
       </span>
@@ -36,13 +34,12 @@
           role="img"
           width=15
           src="/assets/components/metadata/clock.svg"
+          :title="isOriginal ? locale.original.time : locale.reprint.time"
         >
-          <title v-if="isOriginal">{{ locale.original.time }}</title>
-          <title v-else>{{ locale.reprint.time }}</title>
         </img>
       </span>
-      <time
-        class="meta-content"
+      <a v-if="date">
+        <time class="meta-content"
         :datetime="date.toISOString()"
         :title="dayjs().to(dayjs(date))"
         >{{
@@ -53,30 +50,22 @@
             hour: "numeric",
             minute: "numeric",
           })
-        }}</time
-      >
-    </div>
-    <div class="meta-item" v-if="showViewCount">
-      <span class="meta-icon pv">
-        <img
-          role="img"
-          width=15
-          src="/assets/components/metadata/eye.svg"
-        >
-          <title>{{ locale.viewCount }}</title>
-      </img>
+        }}</time>
+      </a>
+      <span v-else class="meta-content">
+        <a :title="locale.unknownTime" >{{ locale.unknownTime }} 
+        </a>
       </span>
-      <span class="meta-content" v-text="viewCount" :title="viewCount"></span>
+
     </div>
-    <div class="meta-item" v-if="showCategory">
+    <div class="meta-item" v-if="category">
       <span class="meta-icon category">
         <img
           role="img"
           width=15
           :src="category.icon"
-        >
-          <title>{{ locale.category }}</title>
-      </img>
+          :title="locale.category"
+        ></img>
       </span>
       <span class="meta-content">
         <a
@@ -88,15 +77,14 @@
           >
       </span>
     </div>
-    <div class="meta-item tag">
+    <div class="meta-item tag"  v-if="tags.length != 0">
       <span class="meta-icon tag">
         <img
           role="img"
           width=15
           src="/assets/components/metadata/tags.svg"
-        >
-          <title>{{ locale.tags }}</title>
-        </img>
+          :title="locale.tags"
+        ></img>
       </span>
       <span class="meta-content">
         <span v-for="(tag, index) in tags" :key="index">
@@ -111,20 +99,33 @@
         </span>
       </span>
     </div>
+    <div class="meta-item" v-if="showViewCount">
+      <span class="meta-icon pv">
+        <img
+          role="img"
+          width=15
+          src="/assets/components/metadata/eye.svg"
+          :title="locale.viewCount"
+        >
+      </img>
+      </span>
+      <span class="meta-content" v-text="viewCount" :title="viewCount"></span>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { reactive, toRefs, onMounted } from "vue";
+//@ts-ignore
 import md5 from "blueimp-md5";
 import dayjs from "dayjs";
 import "dayjs/locale/zh-cn";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { goToLink } from "../utils.ts";
-import { config, locales as metadataLocales } from "../../config/components/metadata.ts";
-import { defaultAuthor } from "../../config/author.ts";
+import { goToLink } from "../utils";
+import { config, locales as metadataLocales } from "../../config/components/metadata";
+import { defaultAuthor } from "../../config/author";
 import { useData } from "vitepress";
-import { categories,locales as categoryLocales } from "../../config/components/categories.ts"; 
+import { categories,locales as categoryLocales } from "../../config/components/categories"; 
 
 dayjs.extend(relativeTime);
 dayjs.locale("zh-cn");
@@ -146,10 +147,9 @@ const data = reactive({
   authorLink: props.article?.authorLink ?? defaultAuthor.link,
   showViewCount: config.showViewCount,
   viewCount: 0,
-  date: new Date(props.article!.date),
+  date: props.article!.date ? new Date(props.article!.date) : null,
   categoryName: props.article?.category ?? 'none',
   tags: props.article?.tags ?? [],
-  showCategory: props.showCategory && !props.article?.category,
 });
 const {
   isOriginal,
@@ -160,12 +160,10 @@ const {
   date,
   categoryName,
   tags,
-  showCategory,
 } = toRefs(data);
 
 const category = categories[categoryName.value] ?? categories.none; 
 const categoryDisplay = categoryLocales[lang.value][categoryName.value] ?? categoryLocales[lang.value].none;
-
 if (data.showViewCount) {
   // 记录并获取文章阅读数（使用文章标题 + 发布时间生成 MD5 值，作为文章的唯一标识）
   onMounted(() => {
@@ -173,7 +171,7 @@ if (data.showViewCount) {
     $api.getArticleViewCount(
       md5(props.article!.title + props.article!.date),
       location.href,
-      function (viewCountData) {
+      function (viewCountData: number) {
         data.viewCount = viewCountData;
       }
     );

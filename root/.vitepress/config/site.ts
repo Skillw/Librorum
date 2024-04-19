@@ -1,4 +1,4 @@
-import { localesOf } from "../locales";
+import { localesOf } from "./locales";
 
 export const image = './assets/logo.png';
 
