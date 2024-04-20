@@ -1,9 +1,10 @@
-import {localesOf } from "../locales.js"
+import { localesOf } from "../locales.js"
  
 export type Config = {
     author: string,
     authorLink:string,
     unknownTime: string,
+    untitled: string,
     original:{
         name:string,
         time:string,
@@ -26,6 +27,7 @@ export const locales = localesOf<Config>({
         author: '作者',
         authorLink:'进入作者主页',
         unknownTime: '未知时间',
+        untitled: '无标题',
         original:{
             name:'原创',
             time: '发布时间',
@@ -42,6 +44,7 @@ export const locales = localesOf<Config>({
         author: 'Author',
         authorLink: 'Visit author\'s homepage',
         unknownTime: 'Unknown time',
+        untitled: 'No title',
         original: {
             name: 'Original',
             time: 'Publication time',

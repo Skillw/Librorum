@@ -15,6 +15,8 @@ declare module 'vue' {
     ARow: typeof import('@arco-design/web-vue')['Row']
     ArticleMetadata: typeof import('./.vitepress/theme/components/ArticleMetadata.vue')['default']
     ATag: typeof import('@arco-design/web-vue')['Tag']
+    AutoSidebar: typeof import('./.vitepress/theme/components/AutoSidebar.vue')['default']
+    Sidebaraa: typeof import('./.vitepress/theme/components/AutoSidebar.vue')['default']
     Tag: typeof import('./.vitepress/theme/components/Tag.vue')['default']
     WordCloud: typeof import('./.vitepress/theme/components/WordCloud.vue')['default']
   }

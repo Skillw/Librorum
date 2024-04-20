@@ -13,19 +13,19 @@
     <div class="meta-item">
       <span class="meta-icon author">
         <a v-if="isOriginal" :title="locale.author" :href="authorLink"> 
-          <img width=20 src="/assets/owner.png">
+          <img width=20 :src="authorIcon">
           </img>
         </a>
         <span v-else :title="locale.author">
-          <img width=13 src="/assets/components/metadata/user.svg">
+          <img width=20 :src="authorIcon">
           </img>  
         </span>
       </span>
       <span class="meta-content">
         <a v-if="isOriginal" :href="authorLink" :title="locale.authorLink">{{
-          author
+          authorDisplay
         }}</a>
-        <span v-else :title="author">{{ author }}</span>
+        <span v-else :href="authorLink" :title="locale.authorLink">{{ authorDisplay }}</span>
       </span>
     </div>
     <div class="meta-item">
@@ -38,12 +38,12 @@
         >
         </img>
       </span>
-      <a v-if="date">
+      <span v-if="date" >
         <time class="meta-content"
         :datetime="date.toISOString()"
         :title="dayjs().to(dayjs(date))"
         >{{
-          date.toLocaleString(lang.value, {
+          date.toLocaleString(lang, {
             year: "numeric",
             month: "numeric",
             day: "numeric",
@@ -51,7 +51,7 @@
             minute: "numeric",
           })
         }}</time>
-      </a>
+      </span>
       <span v-else class="meta-content">
         <a :title="locale.unknownTime" >{{ locale.unknownTime }} 
         </a>
@@ -109,7 +109,7 @@
         >
       </img>
       </span>
-      <span class="meta-content" v-text="viewCount" :title="viewCount"></span>
+      <span class="meta-content" v-text="viewCount" :title="viewCount+''"></span>
     </div>
   </div>
 </template>
@@ -123,7 +123,7 @@ import "dayjs/locale/zh-cn";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { goToLink } from "../utils";
 import { config, locales as metadataLocales } from "../../config/components/metadata";
-import { defaultAuthor } from "../../config/author";
+import { unknownAuthorId,ownerId,locales as authorLocales } from "../../config/author";
 import { useData } from "vitepress";
 import { categories,locales as categoryLocales } from "../../config/components/categories"; 
 
@@ -131,6 +131,8 @@ dayjs.extend(relativeTime);
 dayjs.locale("zh-cn");
 const { lang } = useData()
 const locale = metadataLocales[lang.value];
+const defaultAuthor = authorLocales[lang.value][unknownAuthorId];
+const authors = authorLocales[lang.value];
 
 // 定义文章属性
 const props = defineProps({
@@ -143,8 +145,10 @@ const props = defineProps({
 
 const data = reactive({
   isOriginal: props.article?.isOriginal ?? true,
-  author: props.article?.author ?? defaultAuthor.name,
-  authorLink: props.article?.authorLink ?? defaultAuthor.link,
+  author: props.article?.author,
+  authorDisplay: props.article?.authorDisplay,
+  authorLink: props.article?.authorLink,
+  authorIcon: props.article?.authorIcon,
   showViewCount: config.showViewCount,
   viewCount: 0,
   date: props.article!.date ? new Date(props.article!.date) : null,
@@ -153,14 +157,17 @@ const data = reactive({
 });
 const {
   isOriginal,
-  author,
-  authorLink,
   showViewCount,
   viewCount,
   date,
   categoryName,
   tags,
 } = toRefs(data);
+const author = isOriginal ? ownerId : (data.author ?? defaultAuthor);
+const authorDisplay = data.authorDisplay ?? authors[author].name
+const authorLink = data.authorLink ?? authors[author].link
+const authorIcon = data.authorIcon ?? authors[author].icon
+
 
 const category = categories[categoryName.value] ?? categories.none; 
 const categoryDisplay = categoryLocales[lang.value][categoryName.value] ?? categoryLocales[lang.value].none;

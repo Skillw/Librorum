@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import{ defaultLang,langs } from './config/locales';
 import { markdown } from './config/markdown';
 import { getNav } from './config/nav'
-import { locales as sidebarLocales } from './config/sidebar'
+import AutoSidebar, { locales as sidebarLocales } from './config/sidebar'
 import { locales as siteLocales } from './config/site'
 
 export const locales = (()=>{
@@ -26,8 +26,6 @@ export default defineConfig({
   cleanUrls: true,
   //页面元数据可缓存，减少服务器带宽
   metaChunk:true,
-  //最后更新时间
-  lastUpdated:true,
   //导入markdown配置
   markdown,
   //导入locales配置
@@ -39,25 +37,13 @@ export default defineConfig({
       },
     },
   },
-  
+
+  vite:{
+    plugins:[ AutoSidebar()]
+  },
   themeConfig: {
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
-    ],
-
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
-          { text: 'tag', link: '/tag' },
-          { text: 'archive', link: '/archive' }
-        ]
-      }
-    ],
-
+    nav: [],
+    sidebar: [],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ]

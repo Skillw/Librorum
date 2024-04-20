@@ -41,7 +41,7 @@ export default defineConfig(() => {
           // 这里的type是strict的，所以需要显式的返回boolean
           return excludes.find(b=> path.endsWith(b)) ? true : false;
         }
-      }),
+      })
     ],
   }
 })

@@ -119,7 +119,7 @@ const tags = computed(() => {
         return;
       }
       tag.push(article);
-      tag.sort((a:any, b:any) => b.date?.localeCompare(a.date) ?? false); // 按时间倒序
+      tag.sort((a:any, b:any) => b.date?.localeCompare(a.date) ?? true); // 按时间倒序
     });
   });
   return tags;

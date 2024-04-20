@@ -9,7 +9,7 @@
         @close="goToLink(lang,'/archive')"
       >
       <img width="22" src="/assets/components/archive/archive.svg"></img> &ensp;
-        {{ $categoryDisplay }} {{ locale.titlePost.replace('{count}',$articleData.length)  }}
+        {{ $categoryDisplay }} {{ locale.titlePost.replace('{count}',$articleData.length+'')  }}
       </a-tag>
       <a-tag
         v-else-if="$tag"
@@ -18,7 +18,7 @@
         @close="goToLink(lang,'/archive')"
       >
       <img width="22" src="/assets/components/archive/archive.svg"></img> &ensp;
-        {{ $tag }} {{ locale.titlePost.replace('{count}',$articleData.length)  }}
+        {{ $tag }} {{ locale.titlePost.replace('{count}',$articleData.length+'')  }}
       </a-tag>
       <a-tag
         v-else-if="$year"
@@ -27,25 +27,25 @@
         @close="goToLink(lang,'/archive')"
       >
         <img width="22" src="/assets/components/archive/archive.svg"></img> &ensp;
-        {{ $year }}{{ locale.year  }} {{ locale.titlePost.replace('{count}',$articleData.length)  }}
+        {{ $year }}{{ locale.year  }} {{ locale.titlePost.replace('{count}',$articleData.length+'')  }}
       </a-tag>
       <a-tag
         v-else
         class="content"
       >
         <img width="22" src="/assets/components/archive/archive.svg"></img> &ensp;
-        {{ locale.title.replace('{count}',$articleData.length)  }}
+        {{ locale.title.replace('{count}',$articleData.length+'')  }}
       </a-tag>
     </div>
 
     <!-- 时间轴主体 -->
-    <div class="timeline-item" v-for="(item, year) in archiveData">
-      <div class="year" @click="goToLink(lang,'/archive', 'year', year)">
+    <div class="timeline-item" v-for="year in $years">
+      <div class="year" @click="goToLink(lang,'/archive', 'year', year+'')">
         <img class="chinese-zodiac" width="20"  :src="'/assets/components/archive/chinese-zodiac/' + getChineseZodiac(year) + '.svg'" :title="year != 0 ? locale.years[year % 12] : locale.unknownYear" :alt="locale.zodiac"/>
         <a >{{ year != 0 ? year + locale.year : locale.unknownYear }}</a>
       </div>
       <div class="timeline-item-content">
-        <div v-for="(articles, month) in item">
+        <div v-for="(articles, month) in archiveData[year]">
           <span class="month">
             {{ month != 0 ? locale.months[month] : locale.unkownMouth }}
           </span>
@@ -99,6 +99,8 @@ function getChineseZodiac(year:number) {
   let $tag: string | null;
   let $year: string | null;
 
+  let $years:number[] = [];
+
   /**
    * 初始化时间轴
    */
@@ -141,14 +143,15 @@ function getChineseZodiac(year:number) {
 
     // 文章数据归档处理
     // 1.对文章数据进行降序排序
-    $articleData.sort((a, b) => b.date?.localeCompare(a.date) ?? false);
+    $articleData.sort((a, b) => b.date?.localeCompare(a.date) ?? true);
+    
     // 2.按年、月进行归档
-    for (let i = 0; i < $articleData.length; i++) {
+    for (let i = $articleData.length-1; i >= 0; i--) {
       const article = $articleData[i];
       let date = article.date ? new Date(article.date) : null;
       let year = date?.getFullYear() ?? 0;
       let month = date?.getMonth() ?? 0;
-
+      if($years.indexOf(year) == -1) $years.push(year)
       if (!archiveData[year]) {
         archiveData[year] = {};
       }
@@ -159,6 +162,7 @@ function getChineseZodiac(year:number) {
       article.categoryIcon = categories[article.category].icon ?? categories['none'].icon;
       archiveData[year][month].push(article);
     }
+    $years.sort((a,b) => b - a);
   }
   initTimeline();
 </script>

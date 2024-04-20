@@ -16,3 +16,23 @@ export const markdown: MarkdownOptions = {
     })
   },
 };
+import { locales as tagLocales } from '../config/components/tag';
+import {locales as metadataLocales } from '../config/components/metadata'
+
+export function completeData(lang:string,data:any,src:string){
+  if(!data.title){
+    const start = src.indexOf('#');
+    if(start !== -1){
+      const end = src.indexOf('\n', start);
+      data.title = src.slice(start + 2, end);
+    } else {
+      data.title = metadataLocales[lang].untitled
+    }
+  }
+  if(!data.tags){
+    data.tags = [tagLocales[lang].none]
+  }
+  if(!data.category){
+    data.category = 'none'
+  }
+}
