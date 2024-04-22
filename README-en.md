@@ -3,8 +3,8 @@
 </p>
 <p align="center">
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" /></a>
-  <a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg" /></a>
 </p>
+
 
 <p align="center">
   <a href="https://discord.gg/RhNEzUxb"><img src="https://img.shields.io/discord/1231864138125545503?style=flat&logo=discord&logoColor=white&label=Discord&color=%23404eed" /></a>
