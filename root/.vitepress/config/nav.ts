@@ -48,7 +48,7 @@ import { genCategories } from './components/categories';
         {
           text: 'About',
           items: [
-            { text: 'About Nolebase', link: '/about/index', activeMatch: '/about/index' },
+            { text: 'About Librorum', link: '/about/index', activeMatch: '/about/index' },
             { text: 'About Me', link: '/about/me', activeMatch: '/about/me' }
           ],
           activeMatch: '/about/'

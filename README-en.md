@@ -46,3 +46,11 @@ npm run dev
 ```
 
 Of course, you can seamlessly switch to pnpm, yarn, or even bun.
+
+## Acknowledgement
+
+Librorum would not have been possible without the following open-source projects:
+- Neko's [Nolebase](https://github.com/nolebase/nolebase) and [Integrations](https://github.com/nolebase/integrations)
+- [Charles's Repositories](https://github.com/Charles7c/charles7c.github.io/blob/main/README.en.md)
+Thanks again for their open-source spirit!
+```
