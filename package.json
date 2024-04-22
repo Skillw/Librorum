@@ -32,7 +32,7 @@
     "vue": "^3.4.23"
   },
   "scripts": {
-    "dev": "vitepress dev root",
+    "dev": "vitepress dev root --port 19197",
     "build": "vitepress build root",
     "preview": "vitepress preview root"
   },
