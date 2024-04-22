@@ -18,6 +18,7 @@ Librorum , 取自 Index librorum prohibitorum, 意为禁书目录，旨在提供
 
 > 向权威发出挑战！/ Challenge the authority!
 
+
 ## 特点
 
 - 📚 **系统**：文章附带分类，标签与归档系统，方便查找和阅读。
@@ -46,3 +47,13 @@ npm run dev
 ```
 
 当然，你可以无缝切换到pnpm, yarn, 甚至是bun.
+
+
+
+## 鸣谢
+
+Librorum的诞生离不开以下开源项目：
+- Neko的[Nolebase](https://github.com/nolebase/nolebase) 与 [Integrations](https://github.com/nolebase/integrations/blob/main/README.zh-CN.md)
+- [查尔斯的知识库](https://github.com/Charles7c/charles7c.github.io)
+再次感谢他们的开源精神！
+```

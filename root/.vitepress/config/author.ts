@@ -13,7 +13,7 @@ locales['zh-CN'] =    {
     'Glomzzz': {
         name: 'Glomzzz',
         icon: '/assets/authors/glomzzz.png',
-        link: '/zh-CN/about/me',
+        link: 'https://github.com/Glomzzz',
     },
     'none': {
         name: '未知作者',
@@ -25,7 +25,7 @@ locales.en =  {
     'Glomzzz': {
         name: 'Glomzzz',
         icon: '/assets/authors/glomzzz.png',
-        link: '/en/about/me',
+        link: 'https://github.com/Glomzzz',
     },
     'none': {
         name: 'Unknown',
