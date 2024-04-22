@@ -10,12 +10,12 @@
 </p>
 
 # 禁书目录 | Librorum
-> 认识你自己！—— 苏格拉底
+> 认识你自己！—— 苏格拉底  
 > Know thyself! —— Socrates
 
 **简体中文** | [English](/README.en.md)
 
-Librorum , 取自 Index librorum prohibitorum, 意为禁书目录，旨在提供一套高性能且系统化的知识库管理系统。
+Librorum , 取自 Index librorum prohibitorum, 意为禁书目录，旨在提供一套高性能且系统化的知识库管理系统。  
 希望这个知识库能够帮助到你，也希望你能够在这里找到你所需要的信息。
 
 > 向权威发出挑战！/ Challenge the authority!
@@ -56,6 +56,7 @@ npm run dev
 
 Librorum的诞生离不开以下开源项目：
 - Neko的[Nolebase](https://github.com/nolebase/nolebase) 与 [Integrations](https://github.com/nolebase/integrations/blob/main/README.zh-CN.md)
-- [查尔斯的知识库](https://github.com/Charles7c/charles7c.github.io)
+- [查尔斯的知识库](https://github.com/Charles7c/charles7c.github.io)  
+
 再次感谢他们的开源精神！
 ```

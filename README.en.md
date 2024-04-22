@@ -15,7 +15,7 @@
 
 简体中文 | [**English**](/README.md)
 
-Librorum, derived from Index librorum prohibitorum, means the Index of Prohibited Books, aiming to provide a high-performance and systematic knowledge management system.
+Librorum, derived from Index librorum prohibitorum, means the Index of Prohibited Books, aiming to provide a high-performance and systematic knowledge management system.  
 We hope this knowledge base can help you, and you can find the information you need here.
 
 > Challenge the authority!
