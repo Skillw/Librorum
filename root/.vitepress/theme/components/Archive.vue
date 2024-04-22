@@ -167,4 +167,4 @@ function getChineseZodiac(year:number) {
   initTimeline();
 </script>
 
-<style src="@theme/styles/archive.css" scoped></style>
+<style src="@theme/styles/Archive.css" scoped></style>

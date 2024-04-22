@@ -154,4 +154,4 @@ const dataList = computed(() => {
 });
 </script>
 
-<style src="@theme/styles/tag.css" scoped></style>
+<style src="@theme/styles/Tag.css" scoped></style>
