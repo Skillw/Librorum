@@ -1,5 +1,5 @@
 ---
-aside: false
+metadata: false
 ---
 <ClientOnly>
 	<Archive />

@@ -4,14 +4,11 @@ import { locales as tagLocales } from '../config/components/tag';
 import {locales as metadataLocales } from '../config/components/metadata'
 import { completeData } from '../config/markdown'
 
-const excludedFiles = ['tag.md', 'archive.md', 'me.md'];
-
 export default createContentLoader(['*.md','**/*.md'],{
   includeSrc:true,
   transform(raw){
     const articles = raw.filter(raw => {
-      let name = (raw.url.lastIndexOf('/') === -1 ? raw.url : raw.url.slice(raw.url.lastIndexOf('/') + 1)) + '.md';
-      return !excludedFiles.includes(name);
+      return raw.frontmatter.metadata != false
     });
     let locales = {};
 
