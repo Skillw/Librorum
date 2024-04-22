@@ -32,9 +32,10 @@
     "vue": "^3.4.23"
   },
   "scripts": {
-    "dev": "vitepress dev root --port 19197",
+    "dev": "vitepress dev root",
     "build": "vitepress build root",
-    "preview": "vitepress preview root"
+    "preview": "vitepress preview root",
+    "host": "vitepress dev root --port 19197 --host"
   },
   "peerDependencyRules": {
     "ignoreMissing": [
