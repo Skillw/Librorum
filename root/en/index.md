@@ -13,7 +13,7 @@ hero:
   actions:
     - theme: brand
       text: Start Reading
-      link: /en-US/archive
+      link: /en/archive
     - theme: alt
     - text: Join Discord Server
       link: https://discord.gg/RhNEzUxb
