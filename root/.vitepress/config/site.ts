@@ -10,12 +10,12 @@ export interface Site{
 
 export const locales = localesOf({
   'zh-CN':{
-    title: 'Glom的禁书目录',
-    description: '个人技术知识库，记录 & 分享个人碎片化、结构化、体系化的技术知识内容。',
+    title: '禁书目录例子',
+    description: '技术知识库，记录 & 分享个人碎片化、结构化、体系化的技术知识内容。',
     unknown: 'zh-CN/unknown.md',
   },
   'en':{
-    title: 'Glom\'s Librorum',
+    title: 'Librorum Example',
     description: 'Personal technical knowledge base, recording & sharing personal fragmented, structured, and systematic technical knowledge content.',
     unknown: 'en/unknown.md',
   }
