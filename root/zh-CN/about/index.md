@@ -56,4 +56,3 @@ Librorum的诞生离不开以下开源项目：
 - Neko的[Nolebase](https://github.com/nolebase/nolebase) 与 [Integrations](https://github.com/nolebase/integrations/blob/main/README.zh-CN.md)
 - [查尔斯的知识库](https://github.com/Charles7c/charles7c.github.io)
 再次感谢他们的开源精神！
-```
