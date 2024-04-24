@@ -1,6 +1,8 @@
 import { localesOf } from "../locales";
 
-export const locales = localesOf({ 
+import { Locale } from '@nolebase/vitepress-plugin-git-changelog/vite'
+
+export const locales = localesOf<Locale>({ 
     'zh-CN': { 
       gitChangelogMarkdownSectionTitles: { 
         changelog: '文件历史', 

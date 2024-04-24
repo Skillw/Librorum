@@ -40,11 +40,29 @@ export default defineConfig(() => {
         resolvers: [ArcoResolver({ sideEffect: true, resolveIcons: true })]
       }),
       GitChangelog({ 
+        rewritePaths: {
+          'root/': '',
+        },
         repoURL: () => repoURL, 
         
       }), 
       GitChangelogMarkdownSection({
-        locales: gitchangelog
+        getChangelogTitle: (_, __, { helpers }): string => {
+          for (const [locale, { gitChangelogMarkdownSectionTitles }] of Object.entries(gitchangelog)) {
+            if (helpers.idStartsWith(locale)) {
+              return gitChangelogMarkdownSectionTitles?.changelog ?? 'File History'
+            }
+          }
+          return 'File History'
+        },
+        getContributorsTitle: (_, __, { helpers }): string => {
+          for (const [locale, { gitChangelogMarkdownSectionTitles }] of Object.entries(gitchangelog)) {
+            if (helpers.idStartsWith(locale)) {
+              return gitChangelogMarkdownSectionTitles?.contributors ?? 'Contributors'
+            }
+          }
+          return 'Contributors'
+        }
       }),
       Inspect(),
       UnoCSS(),
