@@ -18,6 +18,7 @@ export const locales = (()=>{
       }
     }
   }
+  console.log(config)
   return config
 })()
 export default defineConfig({

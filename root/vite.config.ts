@@ -47,21 +47,19 @@ export default defineConfig(() => {
         
       }), 
       GitChangelogMarkdownSection({
-        getChangelogTitle: (_, __, { helpers }): string => {
-          for (const [locale, { gitChangelogMarkdownSectionTitles }] of Object.entries(gitchangelog)) {
-            if (helpers.idStartsWith(locale)) {
-              return gitChangelogMarkdownSectionTitles?.changelog ?? 'File History'
-            }
-          }
-          return 'File History'
-        },
-        getContributorsTitle: (_, __, { helpers }): string => {
-          for (const [locale, { gitChangelogMarkdownSectionTitles }] of Object.entries(gitchangelog)) {
-            if (helpers.idStartsWith(locale)) {
-              return gitChangelogMarkdownSectionTitles?.contributors ?? 'Contributors'
-            }
-          }
-          return 'Contributors'
+        locales:{
+          'zh-CN': { 
+            gitChangelogMarkdownSectionTitles: { 
+              changelog: '文件历史', 
+              contributors: '贡献者', 
+            }, 
+          }, 
+          'en': { 
+            gitChangelogMarkdownSectionTitles: { 
+              changelog: 'File History', 
+              contributors: 'Contributors', 
+            }, 
+          }, 
         }
       }),
       Inspect(),
