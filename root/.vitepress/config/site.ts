@@ -14,13 +14,13 @@ export const locales = localesOf({
   'zh-CN':{
     title: '禁书目录例子',
     description: '技术知识库。',
-    link: 'zh-CN',
+    link: '/zh-CN/',
     unknown: 'zh-CN/unknown.md',
   },
   'en':{
     title: 'Librorum Example',
     description: 'Technical knowledge base.',
-    link: 'en',
+    link: '/en/',
     unknown: 'en/unknown.md',
   }
 });
