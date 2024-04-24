@@ -47,6 +47,11 @@ import {
   NolebasePagePropertiesPlugin,
 } from '@nolebase/vitepress-plugin-page-properties/client'
 
+import { 
+  NolebaseGitChangelogPlugin 
+} from '@nolebase/vitepress-plugin-git-changelog/client'
+
+import '@nolebase/vitepress-plugin-git-changelog/client/style.css'
 
 import {properties} from '../config/components/properties'
 import Tag from './components/Tag.vue'
@@ -75,6 +80,7 @@ export const Theme: ThemeConfig = {
         hoverBlockColor: 'rgb(240 197 52 / 7%)',
       },
     } as NolebaseEnhancedReadabilitiesOptions)
+    app.use(NolebaseGitChangelogPlugin)  
     app.use(NolebaseInlineLinkPreviewPlugin)
     app.component('NolebaseUnlazyImg', NolebaseUnlazyImg)
     app.component('WordCloud',WordCloud)

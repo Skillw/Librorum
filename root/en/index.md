@@ -1,6 +1,7 @@
 ---
 # No Archiving
 metadata: false
+gitChangelog: false
 layout: home
 
 hero:

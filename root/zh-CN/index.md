@@ -1,6 +1,7 @@
 ---
 # 不进行归档
 metadata: false
+gitChangelog: false
 layout: home
 
 hero:

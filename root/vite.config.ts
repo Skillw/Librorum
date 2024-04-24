@@ -3,6 +3,13 @@ import Inspect from 'vite-plugin-inspect'
 import UnoCSS from 'unocss/vite'
 import { ThumbnailHashImages } from '@nolebase/vitepress-plugin-thumbnail-hash/vite'
 import { PageProperties, PagePropertiesMarkdownSection } from '@nolebase/vitepress-plugin-page-properties/vite'
+import {repoURL} from './.vitepress/config/site'
+import { 
+  GitChangelog, 
+  GitChangelogMarkdownSection, 
+} from '@nolebase/vitepress-plugin-git-changelog/vite'
+
+import { locales as gitchangelog } from './.vitepress/config/components/gitchangelog'
 
 import Components from 'unplugin-vue-components/vite';
 import { ArcoResolver } from 'unplugin-vue-components/resolvers';
@@ -31,6 +38,13 @@ export default defineConfig(() => {
         dirs: ['.vitepress/theme/components'],
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
         resolvers: [ArcoResolver({ sideEffect: true, resolveIcons: true })]
+      }),
+      GitChangelog({ 
+        repoURL: () => repoURL, 
+        
+      }), 
+      GitChangelogMarkdownSection({
+        locales: gitchangelog
       }),
       Inspect(),
       UnoCSS(),
