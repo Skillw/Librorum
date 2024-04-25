@@ -4,6 +4,7 @@ import { markdown } from './config/markdown';
 import { getNav } from './config/nav'
 import AutoSidebar, { locales as sidebarLocales } from './config/sidebar'
 import { locales as siteLocales } from './config/site'
+import {provider,search} from './config/components/search'
 
 export const locales = (()=>{
   const config:any = {}
@@ -41,12 +42,14 @@ export default defineConfig({
   vite:{
     plugins:[ AutoSidebar()]
   },
+
   themeConfig: {
     nav: [],
     sidebar: [],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Glomzzz/Librorum' }
-    ]
+    ],
+    search:search[provider]
   }
 })
 
