@@ -1,6 +1,6 @@
 import type { DefaultTheme } from "vitepress/theme";
 import { type SiteConfig } from "vitepress";
-import { localesOf, parseLang, rootMode } from "./locales";
+import { localesOf, parseLang } from "./locales";
 import { completeData } from "../config/markdown";
 import fg from "fast-glob";
 import matter from "gray-matter";
@@ -8,45 +8,23 @@ import { type Plugin, type ViteDevServer } from "vite";
 const sync = fg.sync;
 
 export const locales = ()=>{
-  const locales = localesOf<DefaultTheme.Sidebar>({
+  return localesOf<DefaultTheme.Sidebar>({
     "zh-CN": {
-      'blogs/': genSidebar({ lang: "zh-CN",path: "blogs" })
+      'zh-CN/blogs/': genSidebar({ path: "zh-CN/blogs" })
     },
     en:  {
-      'blogs/': genSidebar({ lang: "en",path: "blogs" })
+      'en/blogs/': genSidebar({ path: "en/blogs" })
     },
   })
-  const redirected = localesOf<DefaultTheme.Sidebar>({})
-  if(!rootMode){
-    for (const key in locales) {
-      const locale = locales[key]
-      if (locale instanceof Array) {
-        redirected[key] = locale
-        continue
-      }
-      locale as DefaultTheme.SidebarMulti
-      const redirectedLocale:DefaultTheme.SidebarMulti = {}
-      for (const path in locale) {
-        redirectedLocale[`${key}/${path}`] = locale[path]
-      }
-      redirected[key] = redirectedLocale
-    }
-  }
-  return redirected
 };
 
 type SidebarOptions = {
-  lang: string;
   path: string;
   sortBy?: "date" | "link" | "title";
 };
 function genSidebar(options: SidebarOptions): DefaultTheme.SidebarItem[] {
   const articles: any[] = [];
-  let {lang,path} = options;
-  if (!rootMode){
-    path = `${lang}/${path}`
-  }
-  sync(`root/${path}/*.md`).forEach((file) => {
+  sync(`root/${options.path}/*.md`).forEach((file) => {
     const link = file.replace("root/", "");
     const md = matter.read(file);
     const lang = parseLang(link);

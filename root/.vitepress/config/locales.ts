@@ -13,20 +13,6 @@ export const langs: Record<string, Lang> = {
     label: "English",
   },
 };
-/**
- * 慎重考慮下我决定加入这个选项
- * 开启后会在langs里自动添加以下内容:
- * ```
- * root: {
- *  lang: defaultLang,
- *  label: langs[defaultLang].label
- * }
- * ```
- * 并且vitepress的locales中的root会全部导入deafulLang的内容
- * 
- */
-
-export const rootMode = false;
 
 export const defaultLang = langs["zh-CN"];
 
