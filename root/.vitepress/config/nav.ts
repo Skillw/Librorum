@@ -1,5 +1,6 @@
 import type { DefaultTheme } from 'vitepress';
 import { genCategories } from './components/categories';
+import { rootMode } from './locales';
 /**
  * 导航栏配置 / Navigation configuration
  */
@@ -64,6 +65,7 @@ export function getNav(lang:string,dir?:string):DefaultTheme.Config['nav']{
 }
 
 function addDir(dir:string,item:any){
+  if(rootMode)return;
   if(item.routed) return;
   item.routed = true;
   if(Array.isArray(item)){

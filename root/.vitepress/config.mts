@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import{ defaultLang,langs } from './config/locales';
+import{ defaultLang,langs, rootMode } from './config/locales';
 import { markdown } from './config/markdown';
 import { getNav } from './config/nav'
 import AutoSidebar, { locales as sidebarLocales } from './config/sidebar'
@@ -19,7 +19,13 @@ export const locales = (()=>{
       }
     }
   }
-  return config
+  if(!rootMode) return config
+  const root = {
+    lang: defaultLang.lang,
+    label: langs[defaultLang.lang].label,
+    ...config[defaultLang.lang],
+  }
+  return {root}
 })()
 export default defineConfig({
   lang: defaultLang.lang,
