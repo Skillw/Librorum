@@ -146,7 +146,7 @@ function getChineseZodiac(year:number) {
     $articleData.sort((a, b) => b.date?.localeCompare(a.date) ?? true);
     
     // 2.按年、月进行归档
-    for (let i = $articleData.length-1; i >= 0; i--) {
+    for (let i = 0; i < $articleData.length; i++) {
       const article = $articleData[i];
       let date = article.date ? new Date(article.date) : null;
       let year = date?.getFullYear() ?? 0;
