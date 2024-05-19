@@ -61,33 +61,3 @@ function genSidebar(options: SidebarOptions): DefaultTheme.SidebarItem[] {
 export interface UserConfig {
   vitepress: SiteConfig;
 }
-
-export default function AutoSidebar(): Plugin {
-  return {
-    name: "auto-sidebar",
-    configureServer({ watcher, restart}: ViteDevServer) {
-      const fsWatcher = watcher.add("*.md");
-      fsWatcher.on("all", async (event, path) => {
-        if (path.endsWith(".md")) {
-          try {
-            await restart();
-            console.log("update sidebar... "+path);
-          } catch {
-            console.log(`${event} ${path}`);
-            console.log("update sidebar failed");
-          }
-        }
-      });
-    },
-    config(config) {
-      const barLocales = locales()
-      const siteLocales = (config as UserConfig).vitepress.site.locales
-      for (const key in barLocales) {
-        const locale = barLocales[key]
-        siteLocales[key].themeConfig.sidebar = locale
-      }
-      console.log("injected sidebar data successfully");
-      return config;
-    },
-  };
-}

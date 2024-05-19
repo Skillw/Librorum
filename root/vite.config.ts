@@ -47,20 +47,7 @@ export default defineConfig(() => {
         
       }), 
       GitChangelogMarkdownSection({
-        locales:{
-          'zh-CN': { 
-            gitChangelogMarkdownSectionTitles: { 
-              changelog: '文件历史', 
-              contributors: '贡献者', 
-            }, 
-          }, 
-          'en': { 
-            gitChangelogMarkdownSectionTitles: { 
-              changelog: 'File History', 
-              contributors: 'Contributors', 
-            }, 
-          }, 
-        }
+        locales:gitchangelog
       }),
       Inspect(),
       UnoCSS(),
