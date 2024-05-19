@@ -133,3 +133,5 @@ dist
 .pnp.*
 /root/.vitepress/cache/
 .obsidian/
+
+bun.lockb

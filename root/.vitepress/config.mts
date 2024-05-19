@@ -3,7 +3,7 @@ import{ defaultLang,langs } from './config/locales';
 import { markdown } from './config/markdown';
 import { getNav } from './config/nav'
 import {outlines,level} from './config/outline'
-import AutoSidebar, { locales as sidebarLocales } from './config/sidebar'
+import { locales as sidebarLocales } from './config/sidebar'
 import { locales as siteLocales } from './config/site'
 import {provider,search} from './config/components/search'
 
@@ -15,15 +15,16 @@ export const locales = (()=>{
       ...langs[name],
       ...siteLocales[name],
       themeConfig: {
-        nav: getNav(lang.lang),
-        sidebar: sidebarLocales[name],
+        nav: getNav(lang.lang) ?? getNav(name),
+        sidebar:  sidebarLocales[lang.lang] ?? sidebarLocales[name],
         outline: {
-          outlineTitle: outlines[name].outlineTitle,
+          label: outlines[lang.lang]?.outlineTitle ?? outlines[name]?.outlineTitle,
           level
         }
       }
     }
   }
+
   return config
 })()
 export default defineConfig({
@@ -45,7 +46,6 @@ export default defineConfig({
   },
 
   vite:{
-    plugins:[ AutoSidebar()]
   },
 
   themeConfig: {
