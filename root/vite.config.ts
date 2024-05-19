@@ -37,10 +37,12 @@ export default defineConfig(() => {
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
         resolvers: [ArcoResolver({ sideEffect: true, resolveIcons: true })]
       }),
-      GitChangelog({
+      GitChangelog({ 
         repoURL: () => repoURL, 
+        
       }), 
-      GitChangelogMarkdownSection({}),
+      GitChangelogMarkdownSection({
+      }),
       Inspect(),
       UnoCSS(),
       ThumbnailHashImages(),

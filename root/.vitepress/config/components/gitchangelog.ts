@@ -8,7 +8,7 @@ export const locales = localesOf<Locale>({
         lastEdited: 'This page was last edited {{daysAgo}}',
         lastEditedDateFnsLocaleName: 'enUS',
         viewFullHistory: 'View full history',
-        committedOn: ' on {{date}}',
+        committedOn: ' on {{date}}', 
       },
       'zh-CN': {
         noLogs: '暂无最近变更历史',

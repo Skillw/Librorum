@@ -11,7 +11,7 @@
     "@nolebase/markdown-it-unlazy-img": "2.0.0-rc14",
     "@nolebase/ui": "2.0.0-rc14",
     "@nolebase/vitepress-plugin-enhanced-readabilities": "2.0.0-rc14",
-    "@nolebase/vitepress-plugin-git-changelog": "2.0.0-rc10",
+    "@nolebase/vitepress-plugin-git-changelog": "2.0.0-rc14",
     "@nolebase/vitepress-plugin-highlight-targeted-heading": "2.0.0-rc14",
     "@nolebase/vitepress-plugin-inline-link-preview": "2.0.0-rc14",
     "@nolebase/vitepress-plugin-og-image": "2.0.0-rc14",
