@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 import{ defaultLang,langs } from './config/locales';
 import { markdown } from './config/markdown';
 import { getNav } from './config/nav'
+import {outlines,level} from './config/outline'
 import AutoSidebar, { locales as sidebarLocales } from './config/sidebar'
 import { locales as siteLocales } from './config/site'
 import {provider,search} from './config/components/search'
@@ -15,7 +16,11 @@ export const locales = (()=>{
       ...siteLocales[name],
       themeConfig: {
         nav: getNav(lang.lang),
-        sidebar: sidebarLocales[name]
+        sidebar: sidebarLocales[name],
+        outline: {
+          outlineTitle: outlines[name].outlineTitle,
+          level
+        }
       }
     }
   }
