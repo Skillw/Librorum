@@ -9,8 +9,6 @@ import {
   GitChangelogMarkdownSection, 
 } from '@nolebase/vitepress-plugin-git-changelog/vite'
 
-import { locales as gitchangelog } from './.vitepress/config/components/gitchangelog'
-
 import Components from 'unplugin-vue-components/vite';
 import { ArcoResolver } from 'unplugin-vue-components/resolvers';
 import {excludes} from './.vitepress/config/components/properties'
@@ -40,14 +38,10 @@ export default defineConfig(() => {
         resolvers: [ArcoResolver({ sideEffect: true, resolveIcons: true })]
       }),
       GitChangelog({ 
-        rewritePaths: {
-          'root/': '',
-        },
         repoURL: () => repoURL, 
         
       }), 
       GitChangelogMarkdownSection({
-        locales:gitchangelog
       }),
       Inspect(),
       UnoCSS(),

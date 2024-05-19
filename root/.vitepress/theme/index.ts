@@ -48,8 +48,10 @@ import {
 } from '@nolebase/vitepress-plugin-page-properties/client'
 
 import { 
-  NolebaseGitChangelogPlugin 
+  NolebaseGitChangelogPlugin,InjectionKey as NolebaseGitChangelogInjectionKey
 } from '@nolebase/vitepress-plugin-git-changelog/client'
+
+import { locales as gitchangelogLocales } from '../config/components/gitchangelog'
 
 import '@nolebase/vitepress-plugin-git-changelog/client/style.css'
 
@@ -81,6 +83,11 @@ export const Theme: ThemeConfig = {
       },
     } as NolebaseEnhancedReadabilitiesOptions)
     app.use(NolebaseGitChangelogPlugin)  
+
+    app.provide(NolebaseGitChangelogInjectionKey, {
+      locales: gitchangelogLocales
+    })
+
     app.use(NolebaseInlineLinkPreviewPlugin)
     app.component('NolebaseUnlazyImg', NolebaseUnlazyImg)
     app.component('WordCloud',WordCloud)
@@ -91,6 +98,8 @@ export const Theme: ThemeConfig = {
       tags: string[]
       progress: number
     }>(), {  properties, })
+
+
   },
   setup(){
 
