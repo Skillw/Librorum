@@ -36,7 +36,7 @@ I have written a sample page, you can check it [here](https://librorum.skillw.co
 ### 1. Clone the project
 
 ```bash
-git clone https://github.com/Glomzzz/Librorum.git
+git clone https://github.com/Skillw/Librorum.git
 ```
 
 ### 2. Librorum, start!
