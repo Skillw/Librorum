@@ -52,7 +52,7 @@
           <div class="articles">
             <span v-for="article in articles" class="article">
               <img @click="goToLink(lang,'/archive', 'category', article.category)" width="16" :src="article.categoryIcon" :title="article.categoryDisplay"></img>
-              <a :href="article.path" class="title" target="_blank">{{ article.title }}</a>
+              <a :href="article.path" class="title"  target="_self">{{ article.title }}</a>
               <br>
               <ArticleMetadata :article="article" />
             </span>
