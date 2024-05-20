@@ -24,9 +24,11 @@ export const locales = (()=>{
       }
     }
   }
-
   return config
 })()
+
+const defaultLocale = locales[defaultLang.lang]
+
 export default defineConfig({
   head: [['link', { rel: 'icon', href: '/assets/favicon.ico' }]],
   lang: defaultLang.lang,
@@ -50,7 +52,6 @@ export default defineConfig({
   },
 
   themeConfig: {
-    
     nav: [],
     sidebar: [],
     socialLinks: [
