@@ -20,7 +20,7 @@ hero:
       link: https://discord.gg/RhNEzUxb
     - theme: alt
       text: GitHub 上浏览
-      link: https://github.com/Glomzzz/Librorum
+      link: https://github.com/Skillw/Librorum
 
 features:
   - title: 系统化

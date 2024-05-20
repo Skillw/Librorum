@@ -52,7 +52,7 @@ export default defineConfig({
     nav: [],
     sidebar: [],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/Glomzzz/Librorum' }
+      { icon: 'github', link: 'https://github.com/Skillw/Librorum' }
     ],
     search:search[provider]
   }

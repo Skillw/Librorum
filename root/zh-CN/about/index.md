@@ -35,7 +35,7 @@ Librorum , 取自 Index librorum prohibitorum, 意为禁书目录，旨在提供
 ### 1. clone 项目
 
 ```bash
-git clone https://github.com/Glomzzz/Librorum.git
+git clone https://github.com/Skillw/Librorum.git
 ```
 
 ### 2. 禁书目录，启动!

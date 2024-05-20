@@ -20,7 +20,7 @@ hero:
       link: https://discord.gg/RhNEzUxb
     - theme: alt
       text: Browse on GitHub
-      link: https://github.com/Glomzzz/Librorum
+      link: https://github.com/Skillw/Librorum
 
 features:
   - title: Systematic
