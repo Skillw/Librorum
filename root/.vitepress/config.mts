@@ -52,6 +52,7 @@ export default defineConfig({
   },
 
   themeConfig: {
+    
     nav: [],
     sidebar: [],
     socialLinks: [
