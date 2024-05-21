@@ -13,7 +13,7 @@
 # Librorum
 > Know thyself! —— Socrates
 
-简体中文 | [**English**](/README.md)
+[简体中文](/README.md) | **English**
 
 Librorum, derived from Index librorum prohibitorum, means the Index of Prohibited Books, aiming to provide a high-performance and systematic knowledge management system.  
 We hope this knowledge base can help you, and you can find the information you need here.
