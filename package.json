@@ -36,7 +36,7 @@
     "dev": "vitepress dev root",
     "build": "vitepress build root",
     "preview": "vitepress preview root",
-    "host": "vitepress dev root --port 19197 --host"
+    "host": "vitepress dev root --port 19198 --host"
   },
   "peerDependencyRules": {
     "ignoreMissing": [
