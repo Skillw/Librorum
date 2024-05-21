@@ -47,6 +47,21 @@ npm install
 npm run dev
 ```
 
+### Serve
+
+
+#### Default Page
+
+Since VitePress does not redirect / to /en/ by default,
+
+you need to configure the server to achieve this, otherwise it will jump to the default VitePress page.
+
+Taking Nginx as an example:
+
+```nginx
+rewrite ^=^/(.*) /en/$1 permanent; 
+```
+
 Of course, you can seamlessly switch to pnpm, yarn, or even bun.
 
 ## Acknowledgement

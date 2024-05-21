@@ -50,7 +50,20 @@ npm run dev
 
 当然，你可以无缝切换到pnpm, yarn, 甚至是bun.
 
+### 关于部署
 
+
+#### 默认页面
+
+由于 VitePress 默认不会将 / 重定向到 /en/
+
+你需要配置服务器实现这一点，否则会跳到vitepress默认页面
+
+以 Nginx 为例：
+
+```nginx
+rewrite ^=^/(.*) /en/$1 permanent; 
+```
 
 ## 鸣谢
 
