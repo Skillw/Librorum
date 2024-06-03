@@ -78,9 +78,9 @@ importers:
       fast-glob:
         specifier: ^3.3.2
         version: 3.3.2
-      markdown-it-katex:
-        specifier: ^2.0.3
-        version: 2.0.3
+      markdown-it-mathjax3:
+        specifier: ^4.3.2
+        version: 4.3.2
       thumbhash:
         specifier: ^0.1.1
         version: 0.1.1
@@ -1919,10 +1919,6 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
 
-  katex@0.6.0:
-    resolution: {integrity: sha512-rS4mY3SvHYg5LtQV6RBcK0if7ur6plyEukAOV+jGGPqFImuzu8fHL6M752iBmRGoUyF0bhZbAPoezehn7xYksA==}
-    hasBin: true
-
   kind-of@3.2.2:
     resolution: {integrity: sha512-NOW9QQXMoZGg/oqnVNoNTTIFEIid1627WCffUBJEdMxYApq7mNE7CpzucIPc+ZQg25Phej7IJSmX3hO+oblOtQ==}
     engines: {node: '>=0.10.0'}
@@ -1992,18 +1988,12 @@ packages:
     peerDependencies:
       markdown-it: '>= 9.0.0'
 
-  markdown-it-katex@2.0.3:
-    resolution: {integrity: sha512-nUkkMtRWeg7OpdflamflE/Ho/pWl64Lk9wNBKOmaj33XkQdumhXAIYhI0WO03GeiycPCsxbmX536V5NEXpC3Ng==}
-
   markdown-it-mathjax3@4.3.2:
     resolution: {integrity: sha512-TX3GW5NjmupgFtMJGRauioMbbkGsOXAAt1DZ/rzzYmTHqzkO1rNAdiMD4NiruurToPApn2kYy76x02QN26qr2w==}
 
   markdown-it@13.0.2:
     resolution: {integrity: sha512-FtwnEuuK+2yVU7goGn/MJ0WBZMM9ZPgU9spqlFs7/A/pDIUNSOQZhUgOqYCficIuR2QaFnrt8LHqBWsbTAoI5w==}
     hasBin: true
-
-  match-at@0.1.1:
-    resolution: {integrity: sha512-h4Yd392z9mST+dzc+yjuybOGFNOZjmXIPKWjxBd1Bb23r4SmDOsk2NYCU2BMUBGbSpZqwVsZYNq26QS3xfaT3Q==}
 
   mathjax-full@3.2.2:
     resolution: {integrity: sha512-+LfG9Fik+OuI8SLwsiR02IVdjcnRCy5MufYLi0C3TdMT56L/pjB0alMVGgoWJF8pN9Rc7FESycZB9BMNWIid5w==}
@@ -4009,8 +3999,7 @@ snapshots:
 
   amdefine@1.0.1: {}
 
-  ansi-colors@4.1.3:
-    optional: true
+  ansi-colors@4.1.3: {}
 
   ansi-regex@2.1.1: {}
 
@@ -4158,7 +4147,6 @@ snapshots:
       domelementtype: 2.3.0
       domhandler: 4.3.1
       domutils: 2.8.0
-    optional: true
 
   cheerio@1.0.0-rc.10:
     dependencies:
@@ -4169,7 +4157,6 @@ snapshots:
       parse5: 6.0.1
       parse5-htmlparser2-tree-adapter: 6.0.1
       tslib: 2.6.2
-    optional: true
 
   chokidar@3.6.0:
     dependencies:
@@ -4221,11 +4208,9 @@ snapshots:
 
   comma-separated-tokens@2.0.3: {}
 
-  commander@6.2.1:
-    optional: true
+  commander@6.2.1: {}
 
-  commander@9.2.0:
-    optional: true
+  commander@9.2.0: {}
 
   compute-scroll-into-view@1.0.20: {}
 
@@ -4256,7 +4241,6 @@ snapshots:
       domhandler: 4.3.1
       domutils: 2.8.0
       nth-check: 2.1.1
-    optional: true
 
   css-selector-parser@2.3.2: {}
 
@@ -4267,8 +4251,7 @@ snapshots:
       mdn-data: 2.0.30
       source-map-js: 1.2.0
 
-  css-what@6.1.0:
-    optional: true
+  css-what@6.1.0: {}
 
   csstype@3.1.3: {}
 
@@ -4365,27 +4348,22 @@ snapshots:
       domelementtype: 2.3.0
       domhandler: 4.3.1
       entities: 2.2.0
-    optional: true
 
-  domelementtype@2.3.0:
-    optional: true
+  domelementtype@2.3.0: {}
 
   domhandler@3.3.0:
     dependencies:
       domelementtype: 2.3.0
-    optional: true
 
   domhandler@4.3.1:
     dependencies:
       domelementtype: 2.3.0
-    optional: true
 
   domutils@2.8.0:
     dependencies:
       dom-serializer: 1.4.1
       domelementtype: 2.3.0
       domhandler: 4.3.1
-    optional: true
 
   dotignore@0.1.2:
     dependencies:
@@ -4403,8 +4381,7 @@ snapshots:
 
   emoji-regex@9.2.2: {}
 
-  entities@2.2.0:
-    optional: true
+  entities@2.2.0: {}
 
   entities@3.0.1: {}
 
@@ -4516,13 +4493,11 @@ snapshots:
 
   escalade@3.1.2: {}
 
-  escape-goat@3.0.0:
-    optional: true
+  escape-goat@3.0.0: {}
 
   escape-string-regexp@1.0.5: {}
 
-  esm@3.2.25:
-    optional: true
+  esm@3.2.25: {}
 
   esprima@4.0.1: {}
 
@@ -4849,7 +4824,6 @@ snapshots:
       domhandler: 3.3.0
       domutils: 2.8.0
       entities: 2.2.0
-    optional: true
 
   htmlparser2@6.1.0:
     dependencies:
@@ -4857,7 +4831,6 @@ snapshots:
       domhandler: 4.3.1
       domutils: 2.8.0
       entities: 2.2.0
-    optional: true
 
   human-signals@2.1.0: {}
 
@@ -5036,11 +5009,6 @@ snapshots:
       web-resource-inliner: 6.0.1
     transitivePeerDependencies:
       - encoding
-    optional: true
-
-  katex@0.6.0:
-    dependencies:
-      match-at: 0.1.1
 
   kind-of@3.2.2:
     dependencies:
@@ -5112,17 +5080,12 @@ snapshots:
     dependencies:
       markdown-it: 13.0.2
 
-  markdown-it-katex@2.0.3:
-    dependencies:
-      katex: 0.6.0
-
   markdown-it-mathjax3@4.3.2:
     dependencies:
       juice: 8.1.0
       mathjax-full: 3.2.2
     transitivePeerDependencies:
       - encoding
-    optional: true
 
   markdown-it@13.0.2:
     dependencies:
@@ -5132,15 +5095,12 @@ snapshots:
       mdurl: 1.0.1
       uc.micro: 1.0.6
 
-  match-at@0.1.1: {}
-
   mathjax-full@3.2.2:
     dependencies:
       esm: 3.2.25
       mhchemparser: 4.2.1
       mj-context-menu: 0.6.1
       speech-rule-engine: 4.0.7
-    optional: true
 
   mdast-util-to-hast@13.1.0:
     dependencies:
@@ -5158,15 +5118,13 @@ snapshots:
 
   mdurl@1.0.1: {}
 
-  mensch@0.3.4:
-    optional: true
+  mensch@0.3.4: {}
 
   merge-stream@2.0.0: {}
 
   merge2@1.4.1: {}
 
-  mhchemparser@4.2.1:
-    optional: true
+  mhchemparser@4.2.1: {}
 
   micromark-util-character@2.1.0:
     dependencies:
@@ -5193,8 +5151,7 @@ snapshots:
   mime@1.6.0:
     optional: true
 
-  mime@2.6.0:
-    optional: true
+  mime@2.6.0: {}
 
   mimic-fn@2.1.0: {}
 
@@ -5216,8 +5173,7 @@ snapshots:
 
   mitt@3.0.1: {}
 
-  mj-context-menu@0.6.1:
-    optional: true
+  mj-context-menu@0.6.1: {}
 
   mlly@1.7.0:
     dependencies:
@@ -5252,7 +5208,6 @@ snapshots:
   node-fetch@2.7.0:
     dependencies:
       whatwg-url: 5.0.0
-    optional: true
 
   node-releases@2.0.14: {}
 
@@ -5342,10 +5297,8 @@ snapshots:
   parse5-htmlparser2-tree-adapter@6.0.1:
     dependencies:
       parse5: 6.0.1
-    optional: true
 
-  parse5@6.0.1:
-    optional: true
+  parse5@6.0.1: {}
 
   parse5@7.1.2:
     dependencies:
@@ -5587,8 +5540,7 @@ snapshots:
 
   slash@5.1.0: {}
 
-  slick@1.12.2:
-    optional: true
+  slick@1.12.2: {}
 
   source-map-js@1.2.0: {}
 
@@ -5614,7 +5566,6 @@ snapshots:
       commander: 9.2.0
       wicked-good-xpath: 1.3.0
       xmldom-sre: 0.1.31
-    optional: true
 
   sprintf-js@1.0.3: {}
 
@@ -5719,8 +5670,7 @@ snapshots:
 
   totalist@3.0.1: {}
 
-  tr46@0.0.3:
-    optional: true
+  tr46@0.0.3: {}
 
   trim-lines@3.0.1: {}
 
@@ -5897,8 +5847,7 @@ snapshots:
 
   uuid@9.0.1: {}
 
-  valid-data-url@3.0.1:
-    optional: true
+  valid-data-url@3.0.1: {}
 
   vfile-location@5.0.2:
     dependencies:
@@ -6014,10 +5963,8 @@ snapshots:
       valid-data-url: 3.0.1
     transitivePeerDependencies:
       - encoding
-    optional: true
 
-  webidl-conversions@3.0.1:
-    optional: true
+  webidl-conversions@3.0.1: {}
 
   webpack-sources@3.2.3: {}
 
@@ -6027,7 +5974,6 @@ snapshots:
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
-    optional: true
 
   which-boxed-primitive@1.0.2:
     dependencies:
@@ -6049,8 +5995,7 @@ snapshots:
     dependencies:
       isexe: 2.0.0
 
-  wicked-good-xpath@1.3.0:
-    optional: true
+  wicked-good-xpath@1.3.0: {}
 
   window-size@0.1.0: {}
 
@@ -6070,8 +6015,7 @@ snapshots:
 
   wrappy@1.0.2: {}
 
-  xmldom-sre@0.1.31:
-    optional: true
+  xmldom-sre@0.1.31: {}
 
   yallist@3.1.1: {}
 
