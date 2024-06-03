@@ -45,7 +45,7 @@
         <a >{{ year != 0 ? year + locale.year : locale.unknownYear }}</a>
       </div>
       <div class="timeline-item-content">
-        <div v-for="(articles, month) in archiveData[year]">
+        <div v-for="{month,articles} in archiveData[year].mouths">
           <span class="month">
             {{ month != 0 ? locale.months[month] : locale.unkownMouth }}
           </span>
@@ -154,12 +154,15 @@ function getChineseZodiac(year:number) {
       if($years.indexOf(year) == -1) $years.push(year)
       if (!archiveData[year]) {
         archiveData[year] = {};
+        archiveData[year].mouths = []
       }
       if (!(archiveData[year][month])) {
         archiveData[year][month] = [];
+        archiveData[year].mouths.push({month,articles:archiveData[year][month]})
       }
       article.categoryDisplay = categoryLocales[lang.value][article.category] ?? categoryLocales[lang.value]['none'];
       article.categoryIcon = categories[article.category].icon ?? categories['none'].icon;
+      archiveData[year].mouths.sort((a,b) => b.month - a.month);
       archiveData[year][month].push(article);
     }
     $years.sort((a,b) => b - a);
