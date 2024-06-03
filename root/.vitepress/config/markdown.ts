@@ -3,6 +3,8 @@ import { InlineLinkPreviewElementTransform } from "@nolebase/vitepress-plugin-in
 import { BiDirectionalLinks } from "@nolebase/markdown-it-bi-directional-links";
 import { UnlazyImages } from '@nolebase/markdown-it-unlazy-img'
 import { cwd } from "node:process";
+import markdownItKatex from 'markdown-it-katex'
+
 export const markdown: MarkdownOptions = {
   lineNumbers: true,
 
@@ -14,6 +16,7 @@ export const markdown: MarkdownOptions = {
     md.use(UnlazyImages(), {
       imgElementTag: 'NolebaseUnlazyImg',
     })
+    md.use(markdownItKatex)
   },
 };
 import { locales as tagLocales } from '../config/components/tag';

@@ -23,6 +23,7 @@
     "blueimp-md5": "^2.19.0",
     "dayjs": "^1.11.10",
     "fast-glob": "^3.3.2",
+    "markdown-it-katex": "^2.0.3",
     "thumbhash": "^0.1.1",
     "unlazy": "^0.11.3",
     "unocss": "^0.59.4",

@@ -47,6 +47,9 @@ import {
   NolebasePagePropertiesPlugin,
 } from '@nolebase/vitepress-plugin-page-properties/client'
 
+/**
+ * Git提交日志
+ */
 import { 
   NolebaseGitChangelogPlugin,InjectionKey as NolebaseGitChangelogInjectionKey
 } from '@nolebase/vitepress-plugin-git-changelog/client'
@@ -54,6 +57,12 @@ import {
 import { locales as gitchangelogLocales } from '../config/components/gitchangelog'
 
 import '@nolebase/vitepress-plugin-git-changelog/client/style.css'
+
+/**
+ * LaTeX 支持
+ */
+
+import 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css'
 
 import {properties} from '../config/components/properties'
 import Tag from './components/Tag.vue'
