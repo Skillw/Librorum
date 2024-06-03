@@ -58,11 +58,7 @@ import { locales as gitchangelogLocales } from '../config/components/gitchangelo
 
 import '@nolebase/vitepress-plugin-git-changelog/client/style.css'
 
-/**
- * LaTeX 支持
- */
 
-import 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css'
 
 import {properties} from '../config/components/properties'
 import Tag from './components/Tag.vue'
