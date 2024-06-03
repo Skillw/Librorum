@@ -149,6 +149,6 @@ const customElements = [
   'maction',
   'semantics',
   'annotation',
-  'annotation-xml',
+  'annotation-xml'
   
 ];
