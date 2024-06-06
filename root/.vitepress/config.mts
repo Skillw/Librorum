@@ -16,7 +16,7 @@ export const locales = (()=>{
       ...siteLocales[name],
       themeConfig: {
         nav: getNav(lang.lang) ?? getNav(name),
-        sidebar:  sidebarLocales()[lang.lang] ?? sidebarLocales()[name],
+        sidebar:  sidebarLocales[lang.lang] ?? sidebarLocales[name],
         outline: {
           label: outlines[lang.lang]?.outlineTitle ?? outlines[name]?.outlineTitle,
           level

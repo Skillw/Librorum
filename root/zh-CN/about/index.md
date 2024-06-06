@@ -1,83 +1,58 @@
----
-tags:
- - Skillw
-category: 'docs'
----
-
 <p align="center">
-  <img width="350" src="/root/assets/logo.png">
+  <img width="350" src="/assets/logo.png">
 </p>
 <p align="center">
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" /></a>
 </p>
 
 <p align="center">
-  <a href="https://discord.gg/xp86JxGE"><img src="https://img.shields.io/discord/1241637949875949711?style=flat&logo=discord&logoColor=white&label=Discord&color=%23404eed" /></a>
+  <a href="https://discord.gg/RhNEzUxb"><img src="https://img.shields.io/discord/1231864138125545503?style=flat&logo=discord&logoColor=white&label=Discord&color=%23404eed" /></a>
 </p>
 
-# Skill World
- 
-> 这是命运石之门世界线，Glomzzz 打赢了复活赛，正在狠狠重构!
+# 禁书目录 | Librorum
+> 认识你自己！—— 苏格拉底
+> Know thyself! —— Socrates
 
-- Github: [github.com/Skillw](https://github.com/Skillw)
-- Javadoc: [doc.skillw.com/](https://doc.skillw.com/)
-- QQ群: [950788702](https://qm.qq.com/q/btBV2Y4jeM) 
+Librorum , 取自 Index librorum prohibitorum, 意为禁书目录，旨在提供一套高性能且系统化的知识库管理系统。
+希望这个知识库能够帮助到你，也希望你能够在这里找到你所需要的信息。
 
-
-如果您对 **Skillw Projects** 饶有兴趣，请帮我点几个 ⭐ **Star** ⭐  
+> 向权威发出挑战！/ Challenge the authority!
 
 
-## 已发布项目
+## 特点
 
-- [**Pouvoir**](https://github.com/Skillw/Pouvoir/)
-- [**AttributeSystem**](https://github.com/Skillw/AttributeSystem)
-- [**BuffSystem**](https://github.com/Skillw/BuffSystem)
-- [**FightSystem**](https://github.com/Skillw/FightSystem)
-
-## 正在重构
-
-> 按顺序来，由于代码过于老旧，大部分都会是 breaking-update
-
-- [**Asahi**](https://github.com/Skillw/Asahi)
-- [**Pouvoir**](https://github.com/Skillw/Pouvoir/)
-- [**AttributeSystem**](https://github.com/Skillw/AttributeSystem)
-- [**FightSystem**](https://github.com/Skillw/FightSystem)
-
-## 鸣谢
-
-在我繁忙于学事时，他们自发地为Asahi维护WIKI，感激不尽！
-
- [github.com/Nerorrlex911/Asahi-Wiki](https://github.com/Nerorrlex911/Asahi-Wiki)
-
-### 贡献者
-
-- [Zoyn_](https://github.com/602723113) 提供服务器的大哥哥
-- [Zima_Blue](https://github.com/Nerorrlex911)
-- [q210520993](https://github.com/q210520993)
-- [BrassiCold](https://github.com/BrassiCold)
-
-
-
-- Github: [github.com/Skillw](https://github.com/Skillw)
-- Javadoc: [doc.skillw.com/](https://doc.skillw.com/)
-- QQ群: [950788702](https://qm.qq.com/q/btBV2Y4jeM) 
+- 📚 **系统**：文章附带分类，标签与归档系统，方便查找和阅读。
+- 📝 **易用**：你仅仅需要编写markdown，Librurom便可生成出美轮美奂的文档！
+- 🚀 **性能**：基于[VitePress](https://vitepress.dev) 驱动，速度飞快。
+- 🌐 **国际**：拥有一套易于配置的国际化系统。
+- 🍻 **自由**：基于MIT License，你可以自由地使用、修改和分享Librorum。
+- 📦 **部署**：支持多种部署方式，你可以选择你喜欢的方式。
+  
+我编写了一个示例页面，你可以查看[这里](https://librorum.skillw.com/)
 
 ## 如何部署？
 
 ### 1. clone 项目
 
 ```bash
-git clone https://github.com/Skillw/Skillw.git
+git clone https://github.com/Skillw/Librorum.git
 ```
 
 ### 2. 禁书目录，启动!
 
 ```bash
-cd Skillw
+cd Librorum
 npm install
 npm run dev
 ```
 
 当然，你可以无缝切换到pnpm, yarn, 甚至是bun.
 
-```
+
+
+## 鸣谢
+
+Librorum的诞生离不开以下开源项目：
+- Neko的[Nolebase](https://github.com/nolebase/nolebase) 与 [Integrations](https://github.com/nolebase/integrations/blob/main/README.zh-CN.md)
+- [查尔斯的知识库](https://github.com/Charles7c/charles7c.github.io)
+再次感谢他们的开源精神！

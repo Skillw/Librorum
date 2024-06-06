@@ -8,6 +8,10 @@ export const langs: Record<string, Lang> = {
     lang: "zh-CN",
     label: "简体中文",
   },
+  en: {
+    lang: "en",
+    label: "English",
+  },
 };
 
 export const defaultLang = langs["zh-CN"];
