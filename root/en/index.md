@@ -17,7 +17,7 @@ hero:
       link: /en/archive
     - theme: alt
     - text: Join Discord Server
-      link: https://discord.gg/RhNEzUxb
+      link: https://discord.gg/xp86JxGE
     - theme: alt
       text: Browse on GitHub
       link: https://github.com/Skillw/Librorum
