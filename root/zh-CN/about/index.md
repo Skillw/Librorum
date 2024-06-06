@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://discord.gg/RhNEzUxb"><img src="https://img.shields.io/discord/1231864138125545503?style=flat&logo=discord&logoColor=white&label=Discord&color=%23404eed" /></a>
+  <a href="https://discord.gg/xp86JxGE"><img src="https://img.shields.io/discord/1241637949875949711?style=flat&logo=discord&logoColor=white&label=Discord&color=%23404eed" /></a>
 </p>
 
 # 禁书目录 | Librorum

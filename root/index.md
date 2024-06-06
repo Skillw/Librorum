@@ -16,7 +16,7 @@ hero:
       link: /zh-CN/archive
     - theme: alt
     - text: 加入 Discord 服务器
-      link: https://discord.gg/RhNEzUxb
+      link: https://discord.gg/xp86JxGE
     - theme: alt
       text: GitHub 上浏览
       link: https://github.com/Skillw/Librorum
