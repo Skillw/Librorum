@@ -161,7 +161,7 @@ function getChineseZodiac(year:number) {
         archiveData[year].mouths.push({month,articles:archiveData[year][month]})
       }
       article.categoryDisplay = categoryLocales[lang.value][article.category] ?? categoryLocales[lang.value]['none'];
-      article.categoryIcon = categories[article.category].icon ?? categories['none'].icon;
+      article.categoryIcon = categories[article.category]?.icon ?? categories['none'].icon;
       archiveData[year].mouths.sort((a,b) => b.month - a.month);
       archiveData[year][month].push(article);
     }

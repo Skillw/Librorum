@@ -9,25 +9,25 @@ type Config = Record<string,string>
 
 export const locales = localesOf<Config>({
     'zh-CN': {
-        tech: '技术',
-        life: '生活',
+        docs: '文档',
+        annoucements: '公告',
         none: '无分类'
     },
     'en': {
-        tech: 'Tech',
-        life: 'Life',
+        docs: 'Docs',
+        annoucements: 'Annoucements',
         none: 'No Category'
     }
 })
 
 export const categories:Record<string,Category> = {
-    'tech': {
-        name: 'tech',
-        icon: '/assets/components/categories/tech.svg'
+    'docs': {
+        name: 'dosc',
+        icon: '/assets/components/categories/docs.svg'
     },
-    'life': {
-        name: 'life',
-        icon: '/assets/components/categories/life.svg'
+    'annoucements': {
+        name: 'annoucements',
+        icon: '/assets/components/categories/annoucements.svg'
     },
     'none': {
         name: 'none',
